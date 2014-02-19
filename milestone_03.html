@@ -1,28 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-	
-	<!-- This page can be used as a template for completing your writeups for milestone and "deep dive" assignments -->
-	<!-- Replace the content placeholders with your own content -->
-	
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<title>Geography 485L/585L Assignment Template</title>
-	</head>
+	<style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOZ4kIXBkV-srQsF4NiMTG3UaSFVq7ltQ&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(35.0053806, -106.4105833),
+          zoom: 12
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
 	<body>
 	<p>
 	Michael D. Barthel<br>
 	February 10, 2014</p>
 	<h1>Lab Assignment / Assignment3</h1>
 	<h2>Question 1</h2>
-	<p>What area do you want to depict in your map? Why?</p>
+	<p>What area do you want to depict in your map? Why? Kirtland Air Force Base, Coyote Canyon. 2013 Flooding</p>
 	<h2>Question 2</h2>
-	<p>What is the center point (latitude and longitude) of your area of interest?</p>
+	<p>What is the center point (latitude and longitude) of your area of interest? 35' 0'8 59&quot; N, 106' 24' 53&quot; W</p>
 	<h2>Question 3</h2>
-	<p>What style of map (roads, satellite, hybrid, terrain) is appropriate for your map? Why?</p>
+	<p>What style of map (roads, satellite, hybrid, terrain) is appropriate for your map? Terrain, Roads, satellite. Why? Want to map high flow of flood 2013. Terrain/topography and satellite will show high flow in 2014 and historical high water line in drainage.</p>
     <h2>Question 4</h2>
-	<p>What is the scale of your map (local, regional, continental, global)?  How will this translate into your selection of an appropriate default  zoom level for your map?</p>
+	<p>What is the scale of your map (local, regional, continental, global)? Local How will this translate into your selection of an appropriate default  zoom level for your map? Devault zoop will be set to 5 miles max.</p>
     <h2>Question 5</h2>
     <p>Embed a Google Map in your writeup that is based upon your responses to questions 1-4 above. </p>
+    
+    <div id="map-canvas"/>
+
 	</body>
 </html>
