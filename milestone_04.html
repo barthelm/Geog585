@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Geography 485L/585L Milestone 3</title>
+	<style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+	  body { color: #000000; background: #f4f4f4; margin-left: 10%; margin-right: 10%; font-family: Verdana, sans-serif; font-size:90% }
+			h1 { margin-left: -8%;}
+			h1 {color:red;font-size:1.8em;font-style:italic;font-weight:normal;padding-top:1em;padding-bottom:1em;}
+			h2 {color:green;padding-top:1em;font-size:1.1em}
+  			h2,h3,h4,h5,h6 { margin-left: -4%; }
+			p {padding-bottom:1em;}
+			li {padding-bottom:.25em;}
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOZ4kIXBkV-srQsF4NiMTG3UaSFVq7ltQ&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(35.0028556, -106.4199139),
+          zoom: 14,
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+	<body>
+	<p>
+	Michael D. Barthel<br>
+	March 3, 2014</p>
+	<h1>Lab Assignment / Assignment 4</h1>
+	
+    <h2>Question 1</h2>
+    <p>Make a free-standing web page based upon your Google Map</p>
+    
+    <div id="map-canvas"/>
+
+</body>
+</html>
