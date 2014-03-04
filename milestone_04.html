@@ -25,78 +25,7 @@
           center: new google.maps.LatLng(35.0028556, -106.4199139),
           zoom: 14,
           mapTypeId: google.maps.MapTypeId.TERRAIN,
-    styles: [
-    {
-        "featureType": "administrative",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "all",
-        "stylers": [
-            {
-                "hue": "#727D82"
-            },
-            {
-                "lightness": -30
-            },
-            {
-                "saturation": -80
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "hue": "#F3F4F4"
-            },
-            {
-                "lightness": 80
-            },
-            {
-                "saturation": -80
-            }
-        ]
-    }
-]
-                
+    styles: [ { "featureType": "administrative", "stylers": [ { "visibility": "off" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road", "stylers": [ { "visibility": "on" } ] },{ "featureType": "transit", "stylers": [ { "visibility": "off" } ] },{ "featureType": "landscape", "stylers": [ { "saturation": -80 }, { "lightness": -30 }, { "hue": "#F3F4F4" } ] },{ "featureType": "water", "stylers": [ { "visibility": "on" } ] },{ } ]            
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
