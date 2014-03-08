@@ -18,25 +18,55 @@
 			li {padding-bottom:.25em;}
 		</style>
 	</head>
-	<body>
+<body>
 	<p>
 	Michael D. Barthel<br>
 	March 3, 2014</p>
 	<h1>Lab Assignment / Assignment 5</h1>
-	<h2>Question 1</h2>
-	<p>Briefly describe each dataset based upon the information from the web site.</p>
-	<h2>Question 2</h2>
-	<p>Examine each file using either gdalinfo or ogrinfo 
+<h2>Question 1 and Question 2</h2>
+<p>Briefly describe each dataset based upon the information from the web site. Examine each file using either gdalinfo or ogrinfo 
 	(depending upon whether it is a raster or vector data product), 
-	and answer the following questions about each data set:</p>
+and answer the following questions about each data set:</p>
 	<ul>
-      <li>What is the projection/coordinate system for the data product? If it is undefined, note it.</li>
+<li>What is the projection/coordinate system for the data product? If it is undefined, note it.</li>
 	<li>What is the spatial extent (i.e. bounding box) of the data product?</li>
 	<li>If it is a vector dataset, how many features does it have?</li>
 	<li>If it is a raster dataset, what is the pixel resolution (include units) of the dataset?</li>
-      </ul>
+    <ol>
+    <li style="margin-top:3em;margin-bottom:1em;"><strong>NM Bernalillo NW, US Topo 2013, 03/04/2014, Topographic Maps:</strong> Layered GeoPDF 7.5 Minute Quadrangle Map. Layers of geospatial data include
+        orthoimagery, roads, grids, geographic names, elevation contours, hydrography, and other
+        selected map features. This map depicts geographic features on the surface of the earth. One
+        intended purpose is to support emergency response at all levels of government. The
+        geospatial data in this map are from selected National Map data holdings and other
+        government sources.</li>
+    <ul>
+    <li><u>Coordinate System</u>: EPSG:26913 - NAD83 / UTM zone 13N</li>
+    <li><u>Bounding Box</u>: W: <westbc>-106.749961111</westbc>
+      ; E: <eastbc>-106.625041667</eastbc>
+      ; N: <northbc>35.5017472222</northbc>; S: <southbc>35.3732583333</southbc></li>
+    <li><u>Scale</u>: The scale is 1:24,000</li>
+    </ul>
+    <li style="margin-top:2em;margin-bottom:1em;"><strong>Digital Geologic Map of New Mexico - Volcanic Vents:</strong> This database is not meant to be used or displayed at any scale other than 1:500,000. Any hardcopies utilizing these data sets shall clearly indicate their source. If the licensee has modified the data in any way they are obligated to describe the types of modifications they have performed on the hardcopy map. Licensee specifically agrees not to misrepresent these data sets, nor to imply that changes they made were approved by the U.S. Geological Survey.</li>
+    <ul>
+    <li><u>Coordinate System</u>: EPSG:4269 - NAD83</li>
+    <li><u>Bounding Box</u>: W: <westbc>-109.043091</westbc>; E: <eastbc>-103.170486</eastbc>; N: <northbc>36.940117</northbc>; S: <southbc>31.798595</southbc></li>
+    <li><u>Features</u>: 773 Features</li>
+    </ul>
+    <li style="margin-top:2em;margin-bottom:1em;"><strong>New Mexico Minerals Industry Locator System (MILS)</strong>: This contains all Mineral Industry Systems in the state of New Mexico. It is
+				in a vector digital structure digitized from a 1:500,000 scale map of the state of
+				New Mexico. The source software used was ARC/INFO 5.0 and the conversion software
+				was ARC/INFO 7.0.3. For questions regarding data and full documentation contact:
+				Bureau of Mines, Intermountain Field Operations Center, PO Box 25086, Bldg 20,
+				Federal Center, Denver, CO 80225. File size is 0.4 Mb, compressed</li>
+    <ul>
+    <li><u>Coordinate System</u>: EPSG:4269 - NAD83</li>
+    <li><u>Bounding Box</u>: W: <westbc>-109.047020</westbc>; E: <eastbc>-103.004684</eastbc>; N: <northbc>36.996899</northbc>; S: <southbc>31.352610</southbc></li>
+    <li><u>Features</u>: 8,251 features</li>
+    </ul>
+    </ol>
+	
 	<h2>Question 3</h2>
 	<p>Use proj or cs2cs (I suggest you use cs2cs) to calculate the coordinates of the spatial extent of the datasets that you downloaded in UTM Zone 13N, NAD27. Paste the input and output of the command(s) into your writeup.
 </p>
-	</body>
+</body>
 </html>
