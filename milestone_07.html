@@ -57,5 +57,14 @@
 	<h2>Question 4</h2>
 	<p>Formulate a WMS request for a 900x600 pixel map image that represents the full 3-degree width of the geographic region, and is based upon the minimum Y value of 34.5 degrees North Latitude. Include in your answer both the WMS request and the returned map image.
 </p>
+	<p>image aspect ratio = (width) / (height) = (900) / (600) = 1.5<br />
+BBOX aspect ratio = (width) / (height) = (3) / (height in degrees) = 1.5<br />
+BBOX height = (width) / (BBOX aspect ratio) = (3) / (1.5) = 2<br /><br />
+
+
+BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
+
+	<p>FORMULATE MAP REQUEST??????</p>
+	
 </body>
 </html>
