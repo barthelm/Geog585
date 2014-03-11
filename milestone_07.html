@@ -81,7 +81,7 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	<p>FORMULATE MAP REQUEST??????</p>
 	
 	<h2>Question 5:</h2>
-	<p>Given a WMS that is represented by the following GetCapabilities request, (<a href="http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?request=GetCapabilities&service=WMS">LINK</a>) 
+	<p>Given a WMS that is represented by the following GetCapabilities request, (<a href="http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?request=GetCapabilities&service=WMS">LINK</a>) <br />
 	formulate individual GetMap requests using the following parameters:<br /><br />
 	BBOX=-106.639,35.074,-106.609,35.094 WIDTH=600 HEIGHT=400<br />
 	for each of the following layers: 0 (TNM_Large_Scale_Imagery) and 1 (1_foot_imagery):</p>
@@ -119,10 +119,11 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	<p><em>Which layers return map images that display image content (i.e. return a non-blank image)?</em><br />
     Layer 0 displays image content.</p>
     
-	<h2>Question 7</h2>
-	<p>From examining the information for these layers in the GetCapabilities XML document - which element in each layer's service metadata do you think provides information about the scales for which the layer will return map images containing data? </p>
-	<h2>Question 8</h2>
-	<p>    Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request) 
+	<h2>**********Question 7 ASK</h2>
+	<p><em>From examining the information for these layers in the GetCapabilities XML document - which element in each layer's service metadata do you think provides information about the scales for which the layer will return map images containing data?</em><br />
+    MaxScaleDenominator or Legend URL (???????)</p>
+	<h2>**********Question 8 ASK</h2>
+	<p> Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request) 
     30 pixels 
     1200 pixels </p>
 </body>
