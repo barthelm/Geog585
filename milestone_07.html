@@ -124,20 +124,23 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	<p><em>From examining the information for these layers in the GetCapabilities XML document - which element in each layer's service metadata do you think provides information about the scales for which the layer will return map images containing data?</em><br />
     The Abstract provides information about scales. MaxScaleDenominator shows the ranges for each layer.</p>
 	<h2>**********Question 8 ASK</h2>
-	<p> Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request)<br /><br />
+	<p><em>Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request)</em><br /><br />
+    
+    The aspect ratio of the image in Question 5 is 1.5 (see below calculation)<br />
     BBOX width = (maxx) - (minx) = (-106.609) - (-106.639) = .03 degrees<br />
-BBOX height = (maxy) - (miny) = (35.094) - (35.074) = .02 degrees<br />
-BBOX aspect ratio = (BBOX width) / (BBOX height) = (.03) / (.02) = 1.5<br /><br />
-
-
-width = 30<br />
-aspect ratio = width / height = 30 / height = 1.5<br />
-height = (width) / (aspect ratio) = 30 / 1.5 = 20<br /><br />
-
-
-
-width = 1200<br />
-aspect ratio = width / height = 1200 / height = 1.5<br />
-height = (width) / (aspect ratio) = 1200 / 1.5 = 800<br /><br />
+	BBOX height = (maxy) - (miny) = (35.094) - (35.074) = .02 degrees<br />
+	BBOX aspect ratio = (BBOX width) / (BBOX height) = (.03) / (.02) = 1.5</p>
+	
+    <ol>
+    <li>A map with a width of 30 pixels would have a height of 20 pixels.<br /><br />
+	
+	aspect ratio = width / height = 30 / height = 1.5<br />
+	height = (width) / (aspect ratio) = 30 / 1.5 = 20</li>
+	
+    <li>A map with a width of 1200 pixels would have a height of 800 pixels.<br /><br />
+	
+	aspect ratio = width / height = 1200 / height = 1.5<br />
+	height = (width) / (aspect ratio) = 1200 / 1.5 = 800</li>
+    </ol>
 </body>
 </html>
