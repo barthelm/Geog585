@@ -56,16 +56,17 @@
 	<p><a href="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.5, 34.5, -106.5, 36.5&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=600&HEIGHT=400">LINK</a><br /><br />
 	<em><u>Formulation</u>:</em><br />
 	http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?<br />
-	VERSION=1.1.1&<br />
-	SERVICE=WMS&<br />
-	REQUEST=GetMap&<br />
-	BBOX=-109.5, 34.5, -106.5, 36.5&<br />
-	LAYERS=2007fe_35_county00&<br />
-	FORMAT=image/png&<br />
-	TRANSPARENT=TRUE&<br />
-	STYLES=&<br />
-	SRS=EPSG:4326&<br />
-	WIDTH=600&HEIGHT=400</p>	
+	VERSION=1.1.1<br />
+	&SERVICE=WMS<br />
+	&REQUEST=GetMap<br />
+	&BBOX=-109.5, 34.5, -106.5, 36.5<br />
+	&LAYERS=2007fe_35_county00<br />
+	&FORMAT=image/png<br />
+	&TRANSPARENT=TRUE<br />
+	&STYLES=<br />
+	&SRS=EPSG:4326<br />
+	&WIDTH=600<br />
+    &HEIGHT=400</p>	
 	<p><img src="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.5, 34.5, -106.5, 36.5&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=600&HEIGHT=400" /></p>
 
 	<h2>*****Question 4: ASK</h2>
@@ -89,30 +90,30 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	<li style="margin-bottom:1em;"><a href="http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?VERSION=1.1.0&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=0&WIDTH=600&HEIGHT=400&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">LINK</a><br /><br />
 	<em><u>Formulation</u>:</em><br />
 	http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?<br />
-	VERSION=1.1.0&<br />
-	SERVICE=WMS&<br />
-	REQUEST=GetMap&<br />
-	BBOX=-106.639,35.074,-106.609,35.094&<br />
-	LAYERS=0&<br />
-	WIDTH=600&<br />
-	HEIGHT=400&<br />
-	SRS=EPSG:4326&<br />
-	FORMAT=image/jpeg&<br />
-	STYLES=</li>
+	VERSION=1.1.0<br />
+	&SERVICE=WMS<br />
+	&REQUEST=GetMap<br />
+	&BBOX=-106.639,35.074,-106.609,35.094<br />
+	&LAYERS=0<br />
+	&WIDTH=600<br />
+	&HEIGHT=400<br />
+	&SRS=EPSG:4326<br />
+	&FORMAT=image/jpeg<br />
+	&STYLES=</li>
 
 	<li><a href="http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?VERSION=1.1.0&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=1&WIDTH=600&HEIGHT=400&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">LINK</a><br /><br />
 	<em><u>Formulation</u>:</em><br />
 	http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?<br />
-	VERSION=1.1.0&<br />
-	SERVICE=WMS&<br />
-	REQUEST=GetMap&<br />
-	BBOX=-106.639,35.074,-106.609,35.094&<br />
-	LAYERS=1&<br />
-	WIDTH=600&<br />
-	HEIGHT=400&<br />
-	SRS=EPSG:4326&<br />
-	FORMAT=image/jpeg&<br />
-	STYLES=</li>
+	VERSION=1.1.0<br />
+	&SERVICE=WMS<br />
+	&REQUEST=GetMap<br />
+	&BBOX=-106.639,35.074,-106.609,35.094<br />
+	&LAYERS=1<br />
+	&WIDTH=600<br />
+	&HEIGHT=400<br />
+	&SRS=EPSG:4326<br />
+	&FORMAT=image/jpeg<br />
+	&STYLES=</li>
 	</ol>
 
 	<h2>Question 6</h2>
@@ -123,8 +124,20 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	<p><em>From examining the information for these layers in the GetCapabilities XML document - which element in each layer's service metadata do you think provides information about the scales for which the layer will return map images containing data?</em><br />
     MaxScaleDenominator or Legend URL (???????)</p>
 	<h2>**********Question 8 ASK</h2>
-	<p> Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request) 
-    30 pixels 
-    1200 pixels </p>
+	<p> Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request)<br /><br />
+    BBOX width = (maxx) - (minx) = (-106.609) - (-106.639) = .03 degrees<br />
+BBOX height = (maxy) - (miny) = (35.094) - (35.074) = .02 degrees<br />
+BBOX aspect ratio = (BBOX width) / (BBOX height) = (.03) / (.02) = 1.5<br /><br />
+
+
+width = 30<br />
+aspect ratio = width / height = 30 / height = 1.5<br />
+height = (width) / (aspect ratio) = 30 / 1.5 = 20<br /><br />
+
+
+
+width = 1200<br />
+aspect ratio = width / height = 1200 / height = 1.5<br />
+height = (width) / (aspect ratio) = 1200 / 1.5 = 800<br /><br />
 </body>
 </html>
