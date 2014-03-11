@@ -36,6 +36,7 @@
 	<h2>Question 1</h2>
 	<p><em>What is the aspect ratio of this geographic region?</em><br />
 	1.5<br /><br />
+	<em>Calculations:</em><br />
 	BBOX width = (maxx) - (minx) = (-106.5) - (-109.5) = 3 degrees<br />
 	BBOX height = (maxy) - (miny) = (36.5) - (34.5) = 2 degrees<br />
 	BBOX aspect ratio = (BBOX width) / (BBOX height) = (3) / (2) = 1.5
@@ -44,6 +45,7 @@
 	<h2>Question 2</h2>
 	<p><em>What would be the height (in whole pixels) for a map image for this region that is 600 pixels wide?</em><br />
 	400<br /><br />
+	<em>Calculations:</em><br />
 	width = 600<br />
 	aspect ratio = width / height = 600 / height = 1.5<br />
 	height = (width) / (aspect ratio) = 600 / 1.5 = 400
@@ -52,6 +54,7 @@
 	<h2>Question 3</h2>
 	<p>Formulate a WMS request that reflects the values determined in 1.1 and 1.2 above for the WMS service used above in the examples. Include in your answer both the actual WMS request and the returned map image.</p>
 	<p><a href="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.5, 34.5, -106.5, 36.5&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=600&HEIGHT=400">LINK</a><br /><br />
+	<em>Formulation:</em><br />
 	http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?<br />
 	VERSION=1.1.1&<br />
 	SERVICE=WMS&<br />
@@ -84,7 +87,7 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	for each of the following layers: 0 (TNM_Large_Scale_Imagery) and 1 (1_foot_imagery):</p>
 	<ol>
 	<li><a href="http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?VERSION=1.1.0&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=0&WIDTH=600&HEIGHT=400&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">LINK</a><br /><br />
-	
+	<em>Formulation:</em><br />
 	http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?<br />
 	VERSION=1.1.0&<br />
 	SERVICE=WMS&<br />
@@ -98,7 +101,7 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	STYLES=</li>
 
 	<li><a href="http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?VERSION=1.1.0&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=1&WIDTH=600&HEIGHT=400&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">LINK</a><br /><br />
-
+	<em>Formulation:</em><br />
 	http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?<br />
 	VERSION=1.1.0&<br />
 	SERVICE=WMS&<br />
