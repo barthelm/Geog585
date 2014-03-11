@@ -2,9 +2,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	
-	<!-- This page can be used as a template for completing your writeups for milestone and "deep dive" assignments -->
-	<!-- Replace the content placeholders with your own content -->
-	
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<title>Geography 485L/585L Milestone 7</title>
@@ -53,7 +50,7 @@
 	
 	<h2>Question 3</h2>
 	<p><em>Formulate a WMS request that reflects the values determined in 1.1 and 1.2 above for the WMS service used above in the examples. Include in your answer both the actual WMS request and the returned map image.</em></p>
-	<p><a href="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.5, 34.5, -106.5, 36.5&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=600&HEIGHT=400">Lto WMS request</a><br /><br />
+	<p><a href="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.5, 34.5, -106.5, 36.5&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=600&HEIGHT=400">Link to WMS request</a><br /><br />
 	<em><u>Formulation</u>:</em><br />
 	http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?<br />
 	VERSION=1.1.1<br />
@@ -124,7 +121,7 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	<p><em>From examining the information for these layers in the GetCapabilities XML document - which element in each layer's service metadata do you think provides information about the scales for which the layer will return map images containing data?</em><br /><br />
     The Abstract provides information about scales. MaxScaleDenominator shows the ranges for each layer.</p>
 	
-    <h2>**********Question 8 ASK</h2>
+    <h2>**********Question 8 ASK: Are you asking about the maps from Question 5?</h2>
 	<p><em>Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request)</em><br /><br />
     
     The aspect ratio of the image in Question 5 is 1.5 (see below calculation)<br />
@@ -133,12 +130,14 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	BBOX aspect ratio = (BBOX width) / (BBOX height) = (.03) / (.02) = 1.5</p>
 	
     <ol>
-    <li>A map with a width of 30 pixels would have a height of 20 pixels.<br /><br />
+    <li style="margin-bottom:1em;">A map with a width of 30 pixels would have a height of 20 pixels.<br />
+    This would be map image: <br /><br />
 	
 	aspect ratio = width / height = 30 / height = 1.5<br />
 	height = (width) / (aspect ratio) = 30 / 1.5 = 20</li>
 	
-    <li>A map with a width of 1200 pixels would have a height of 800 pixels.<br /><br />
+    <li>A map with a width of 1200 pixels would have a height of 800 pixels.<br />
+    This would be map image: <br /><br />
 	
 	aspect ratio = width / height = 1200 / height = 1.5<br />
 	height = (width) / (aspect ratio) = 1200 / 1.5 = 800</li>
