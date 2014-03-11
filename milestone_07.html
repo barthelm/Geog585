@@ -34,7 +34,7 @@
 	<p>Given that McKinley County NM is contained within the following BBOX: -109.5, 34.5, -106.5, 36.5</p>
 	
 	<h2>Question 1</h2>
-	<p><em>What is the aspect ratio of this geographic region?</em><br />
+	<p><em>What is the aspect ratio of this geographic region?</em><br /><br />
 	1.5<br /><br />
 	<em><u>Calculations</u>:</em><br />
 	BBOX width = (maxx) - (minx) = (-106.5) - (-109.5) = 3 degrees<br />
@@ -43,7 +43,7 @@
 	</p>
 	
 	<h2>Question 2</h2>
-	<p><em>What would be the height (in whole pixels) for a map image for this region that is 600 pixels wide?</em><br />
+	<p><em>What would be the height (in whole pixels) for a map image for this region that is 600 pixels wide?</em><br /><br />
 	400<br /><br />
 	<em><u>Calculations</u>:</em><br />
 	width = 600<br />
@@ -87,7 +87,7 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	BBOX=-106.639,35.074,-106.609,35.094 WIDTH=600 HEIGHT=400<br />
 	for each of the following layers: 0 (TNM_Large_Scale_Imagery) and 1 (1_foot_imagery):</p>
 	<ol>
-	<li style="margin-bottom:1em;"><a href="http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?VERSION=1.1.0&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=0&WIDTH=600&HEIGHT=400&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">LINK</a><br /><br />
+	<li style="margin-bottom:1em;"><a href="http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?VERSION=1.1.0&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=0&WIDTH=600&HEIGHT=400&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">Layer 0 Link</a><br /><br />
 	<em><u>Formulation</u>:</em><br />
 	http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?<br />
 	VERSION=1.1.0<br />
@@ -101,7 +101,7 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	&FORMAT=image/jpeg<br />
 	&STYLES=</li>
 
-	<li><a href="http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?VERSION=1.1.0&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=1&WIDTH=600&HEIGHT=400&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">LINK</a><br /><br />
+	<li><a href="http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?VERSION=1.1.0&SERVICE=WMS&REQUEST=GetMap&BBOX=-106.639,35.074,-106.609,35.094&LAYERS=1&WIDTH=600&HEIGHT=400&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">Layer 1 Link</a><br /><br />
 	<em><u>Formulation</u>:</em><br />
 	http://raster.nationalmap.gov/arcgis/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?<br />
 	VERSION=1.1.0<br />
@@ -117,13 +117,14 @@ BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
 	</ol>
 
 	<h2>Question 6</h2>
-	<p><em>Which layers return map images that display image content (i.e. return a non-blank image)?</em><br />
+	<p><em>Which layers return map images that display image content (i.e. return a non-blank image)?</em><br /><br />
     Layer 0 displays image content.</p>
     
 	<h2>Question 7</h2>
-	<p><em>From examining the information for these layers in the GetCapabilities XML document - which element in each layer's service metadata do you think provides information about the scales for which the layer will return map images containing data?</em><br />
+	<p><em>From examining the information for these layers in the GetCapabilities XML document - which element in each layer's service metadata do you think provides information about the scales for which the layer will return map images containing data?</em><br /><br />
     The Abstract provides information about scales. MaxScaleDenominator shows the ranges for each layer.</p>
-	<h2>**********Question 8 ASK</h2>
+	
+    <h2>**********Question 8 ASK</h2>
 	<p><em>Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request)</em><br /><br />
     
     The aspect ratio of the image in Question 5 is 1.5 (see below calculation)<br />
