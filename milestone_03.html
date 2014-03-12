@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<title>Geography 485L/585L Milestone 3</title>
 		<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
     <script type="text/javascript"
@@ -12,7 +13,8 @@
       function initialize() {
         var mapOptions = {
           center: new google.maps.LatLng(35.0053806, -106.4105833),
-          zoom: 13
+          zoom: 12,
+          mapTypeId: google.maps.MapTypeId.TERRAIN
         };
 		
         var map = new google.maps.Map(document.getElementById("map-canvas"),
