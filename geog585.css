@@ -12,3 +12,5 @@ li {padding-bottom:.5em;}
 #nav li{ display:inline;padding:10px;color:#cccccc;}
 #nav a { display:inline-block;color:#ffffff;text-transform:none;}
 #map-canvas { height: 100%;margin-bottom:3em; }
+
+		  .infoBox { color:black }
