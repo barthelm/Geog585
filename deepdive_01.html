@@ -46,15 +46,24 @@
 			  title:"Solid Waste Management Unit"
 			  });
 			swmu2Marker.setMap(map);
-			var well1InfoContent = '<div class="infoBox">' +
-			  '<p><strong>Proposed Monitoring Well 1</strong><br />Well Elevation 6458 ft.<br />Depth to Groundwater 119 ft.</p>' +
-			  '</div>'
-			var well1InfoWindow = new google.maps.InfoWindow({
-			  content: well1InfoContent
-			  });
-			google.maps.event.addListener(well1Marker, 'click', function() {
-			  well1InfoWindow.open(map,well1Marker);
-			  });
+		var well1InfoContent = '<div class="infoBox">' +
+		  '<p><strong>Proposed Monitoring Well 1</strong><br />Well Elevation 6458 ft.<br />Depth to Groundwater 119 ft.</p>' +
+		  '</div>'
+		var well1InfoWindow = new google.maps.InfoWindow({
+		  content: well1InfoContent
+		  });
+		google.maps.event.addListener(well1Marker, 'click', function() {
+		  well1InfoWindow.open(map,well1Marker);
+		  });
+		var well2InfoContent = '<div class="infoBox">' +
+		  '<p><strong>Proposed Monitoring Well 2</strong><br />Well Elevation 6470 ft.<br />Depth to Groundwater 114ft.</p>' +
+		  '</div>'
+		var well2InfoWindow = new google.maps.InfoWindow({
+		  content: well2InfoContent
+		  });
+		google.maps.event.addListener(well2Marker, 'click', function() {
+		  well2InfoWindow.open(map,well2Marker);
+		  });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
         </script>
