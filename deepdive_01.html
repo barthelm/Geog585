@@ -5,24 +5,52 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<title>Geography 485L/585L Deep Dive 1</title>
 		<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOZ4kIXBkV-srQsF4NiMTG3UaSFVq7ltQ&sensor=false">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(35.0028556, -106.4199139),
-          zoom: 14,
-          mapTypeId: google.maps.MapTypeId.TERRAIN,
-    styles: [ { "featureType": "administrative", "stylers": [ { "visibility": "off" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road", "stylers": [ { "visibility": "on" },{ "weight": 0.3 } ] },{ "featureType": "transit", "stylers": [ { "visibility": "off" } ] },{ "featureType": "landscape", "stylers": [ { "saturation": -80 }, { "lightness": -30 }, { "hue": "#F3F4F4" } ] },{ "featureType": "water", "stylers": [ { "visibility": "on" } ] },{ } ]            
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOZ4kIXBkV-srQsF4NiMTG3UaSFVq7ltQ&sensor=false"></script>
+        <script type="text/javascript">
+        function initialize() {
+        var well1 = new google.maps.LatLng(35.002217, -106.417608)
+        var well2 = new google.maps.LatLng(35.0023, -106.419114)
+        var well3 = new google.maps.LatLng(35.0023, -106.421114)
+        var swmu1 = new google.maps.LatLng(35.004556, -106.407489)
+        var swmu2 = new google.maps.LatLng(35.005583, -106.411322)
+		var mapOptions = {
+        center: new google.maps.LatLng(35.0028556, -106.4199139),
+        zoom: 14,
+        mapTypeId: google.maps.MapTypeId.TERRAIN,
+        styles: [ { "featureType": "administrative", "stylers": [ { "visibility": "off" } ] },{ "featureType": "poi", "stylers": [ { "visibility": "off" } ] },{ "featureType": "road", "stylers": [ { "visibility": "on" },{ "weight": 0.3 } ] },{ "featureType": "transit", "stylers": [ { "visibility": "off" } ] },{ "featureType": "landscape", "stylers": [ { "saturation": -80 }, { "lightness": -30 }, { "hue": "#F3F4F4" } ] },{ "featureType": "water", "stylers": [ { "visibility": "on" } ] },{ } ]            
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+        mapOptions);
+		var wellMarker = new google.maps.Marker({
+			  position: well1,
+			  title:"Proposed Monitoring Well"
+			  });
+			wellMarker.setMap(map);
+		var wellMarker = new google.maps.Marker({
+			  position: well2,
+			  title:"Proposed Monitoring Well"
+			  });
+			wellMarker.setMap(map);
+		var wellMarker = new google.maps.Marker({
+			  position: well3,
+			  title:"Proposed Monitoring Well"
+			  });
+			wellMarker.setMap(map);
+		var wellMarker = new google.maps.Marker({
+			  position: swmu1,
+			  title:"Solid Waste Management Unit"
+			  });
+			wellMarker.setMap(map);
+		var wellMarker = new google.maps.Marker({
+			  position: swmu2,
+			  title:"Solid Waste Management Unit"
+			  });
+			wellMarker.setMap(map);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
 </head>
-	<body>
+	<body onload="initialize()">
 	<h4>Michael D. Barthel<br>
 	March 3, 2014<br />
 	Geography 485L/585L </h4>
@@ -51,18 +79,18 @@
 
 <p>These are the markers I would like to add:</p>
 <ol>
-	<li>Proposed Monitoring Well 1:  35° 0'7.98"N, 106°25'3.39"W<br />
+	<li>Proposed Monitoring Well 1:  35.002217, 106.417608<br />
 		Well Elevation 6458 ft.<br />
 		Depth to Groundwater 119 ft.</li>
-	<li>Proposed Monitoring Well 2:  35° 0'8.28"N, 106°25'8.81"W<br />
+	<li>Proposed Monitoring Well 2:  35.0023, 106.419114<br />
 		Well Elevation 6470 ft.<br />
 		Depth to Groundwater 114ft.</li>
 	<li>Proposed Monitoring Well 3:  35° 0'13.83"N<br />
 		Well Elevation 6474 ft.<br />
 		Depth to Groundwater 109 ft.</li>
-	<li>Solid Waste Management Unit:  35° 0'16.40"N, 106°24'26.96"W<br />
+	<li>Solid Waste Management Unit:  35.004556, 106.407489<br />
 		Site Characterization:  Burn facility with potential nitrate contaminants</li>
-	<li>Solid Waste Management Unit:  35° 0'20.10"N, 106°24'40.76"W<br />
+	<li>Solid Waste Management Unit:  35.005583, 106.411322<br />
 		Site Characterization:  Burn facility with Volatile Organic Compounds</li>
 </ol>
     
