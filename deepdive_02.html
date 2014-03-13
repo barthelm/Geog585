@@ -117,11 +117,28 @@ SRS: EPSG:4269, EPSG:4326, EPSG:4267, EPSG:26913, EPSG:26912, <br>
 EPSG:26914, EPSG:26713, EPSG:26712, EPSG:26714, EPSG:3857 </li>
 </ol>
 
-<h2>****Question 9: TO DO</h2>
+<h2>Question 9:</h2>
 <p><em>Formulate a GetMap request for the "tl_2010_35_bg10" layer from this service, <br>
 for a 500x500 pixel map image that is 0.05-degrees wide and 0.05-degress high, <br>
 with the SW corner of the map image located at 35°N and -106°45'E. <br>
 Include in your write-up the complete GetMap request and the returned map image. </em></p>
+
+	<p>http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?<br />
+VERSION=1.1.1&<br />
+SERVICE=wms&<br />
+REQUEST=GetMap&<br />
+BBOX=-106.45,35,-106.40,35.05&<br />
+LAYERS=tl_2010_35_bg10&<br />
+WIDTH=500&<br />
+HEIGHT=500&<br />
+SRS=EPSG:4326&<br />
+FORMAT=image/jpeg&<br />
+STYLES=
+</p>
+<p><a href="http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?VERSION=1.1.1&SERVICE=wms&REQUEST=GetMap&BBOX=-106.45,35,-106.40,35.05&LAYERS=tl_2010_35_bg10&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=">Link</a></p>
+<p><img src=" http://gstore.unm.edu/apps/rgis/datasets/715663ba-c1c3-414c-84a7-c671526f8316/services/ogc/wms?VERSION=1.1.1&SERVICE=wms&REQUEST=GetMap&BBOX=-106.45,35,-106.40,35.05&LAYERS=tl_2010_35_bg10&WIDTH=500&HEIGHT=500&SRS=EPSG:4326&FORMAT=image/jpeg&STYLES=" /></p>
+
+
     
 </body>
 </html>
