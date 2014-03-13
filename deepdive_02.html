@@ -90,13 +90,19 @@ GetCapabilities
 <li>NAD27 / UTM zone 13N is EPSG:26713</li>
 </ol>
 
-<h2>****Question 7: ASK</h2>
+<h2>Question 7:</h2>
 <p><em>Use the cs2cs utility to convert the following WGS84 Geographic <br>
   Coordinates into UTM Zone 13, NAD83 coordinates.<br />
 Include your cs2cs command and output in your writeup.</em></p>
+<p><u>Command Line</u>:<br>
+cs2cs +proj=latlong +ellps=WGS84 +datum=WGS84 +to +proj=utm +zone=13 +ellps=GRS80 +datum=NAD83 +units=m</p>
 <ol>
-<li style="margin-bottom:1em;">35°14′19.29″ N, 107°36′30.67″ W (Mount Taylor Summit):<br /></li>
-<li>34°16′40.34″ N, 103°19′28.49″ W (Blackwater Draw):<br /></li>
+<li style="margin-bottom:1em;">Mount Taylor Summit<br>
+<u>Input</u>: 35°14′19.29″ N, 107°36′30.67″ W:<br>
+  <u>Output</u>: 284773.19	/ 3891333.03 0.00  <br /></li>
+<li>Blackwater Draw:<br>
+  <u>Input</u>: 34°16′40.34″ N, 103°19′28.49″ W<br />
+  <u>Output</u>: 666622.01	/ 3781811.26 0.00<br /></li>
 </ol>
 
 <h2>Question 8</h2>
