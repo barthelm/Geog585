@@ -74,7 +74,7 @@
 	BBOX aspect ratio = (width) / (height) = (3) / (height in degrees) = 1.5<br />
 	BBOX height = (width) / (BBOX aspect ratio) = (3) / (1.5) = 2<br /><br />
 
-	BBOX Max Y = (BBOX Min Y) + (BBOX height) = (34.5) + (2) = 36.5</p>
+</p>
 
 	<p><a href="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.5,34.5,-106.5,36.5&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=900&HEIGHT=600">Map Request Link</a><br /><br />
 	<em><u>Formulation</u>:</em><br />
@@ -89,8 +89,8 @@
 	STYLES=&<br />
 	SRS=EPSG:4326&<br />
 	WIDTH=900&<br />
-	HEIGHT=600</p>
-	<p><img src="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.5,34.5,-106.5,36.5&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=900&HEIGHT=600" /></p>
+HEIGHT=600</p>
+<p><img src="http://gstore.unm.edu/apps/rgis/datasets/97810/services/ogc/wms?VERSION=1.1.1&SERVICE=WMS&REQUEST=GetMap&BBOX=-109.5,34.5,-106.5,36.5&LAYERS=2007fe_35_county00&FORMAT=image/png&TRANSPARENT=TRUE&STYLES=&SRS=EPSG:4326&WIDTH=900&HEIGHT=600" /></p>
 	
 	<h2>Question 5:</h2>
 	<p>Given a WMS that is represented by the following GetCapabilities request, (<a href="http://raster.nationalmap.gov/ArcGIS/services/TNM_Large_Scale_Imagery/MapServer/WMSServer?request=GetCapabilities&service=WMS">LINK</a>) <br />
@@ -135,8 +135,9 @@
 	<p><em>From examining the information for these layers in the GetCapabilities XML document - which element in each layer's service metadata do you think provides information about the scales for which the layer will return map images containing data?</em><br /><br />
     The Abstract provides information about scales. MaxScaleDenominator shows the ranges for each layer.</p>
 	
-    <h2>*****Question 8 ASK: Are you asking about the maps from Question 5?</h2>
-	<p><em>Which map images contain data for each of the following map image widths (remember to adjust the image height to match the BBOX of the request)</em><br /><br />
+    <h2>Question 8:</h2>
+<p><em>Which map images contain data for each of the following map image widths <br />
+    (remember to adjust the image height to match the BBOX of the request)</em><br /><br />
     
     The aspect ratio of the image in Question 5 is 1.5 (see below calculation)<br />
     <em><u>Calculation</u>:</em><br />
@@ -145,14 +146,15 @@
 	BBOX aspect ratio = (BBOX width) / (BBOX height) = (.03) / (.02) = 1.5</p>
 	
     <ol>
-    <li style="margin-bottom:1em;">A map with a width of 30 pixels would have a height of 20 pixels.<br />
-    This would be map image: <br /><br />
+    <li style="margin-bottom:1em;">This map would be 30 pixels wide x 20 pixels high:<br />
+    This would be map image: LAYER 1, 1_foot_imagery<br /><br />
 	
 	aspect ratio = width / height = 30 / height = 1.5<br />
 	height = (width) / (aspect ratio) = 30 / 1.5 = 20</li>
 	
-    <li>A map with a width of 1200 pixels would have a height of 800 pixels.<br />
-    This would be map image: <br /><br />
+    <li><span style="margin-bottom:1em;">This map would be </span>1200 pixels wide x  800 pixels high:<br />
+    This would be map image: LAYER 0, TNM_Large_Scale_Imagery<br />
+    <br />
 	
 	aspect ratio = width / height = 1200 / height = 1.5<br />
 	height = (width) / (aspect ratio) = 1200 / 1.5 = 800</li>
