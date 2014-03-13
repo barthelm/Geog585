@@ -21,31 +21,40 @@
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
-		var wellMarker = new google.maps.Marker({
+		var well1Marker = new google.maps.Marker({
 			  position: well1,
 			  title:"Proposed Monitoring Well"
 			  });
-			wellMarker.setMap(map);
-		var wellMarker = new google.maps.Marker({
+			well1Marker.setMap(map);
+		var well2Marker = new google.maps.Marker({
 			  position: well2,
 			  title:"Proposed Monitoring Well"
 			  });
-			wellMarker.setMap(map);
-		var wellMarker = new google.maps.Marker({
+			well2Marker.setMap(map);
+		var well3Marker = new google.maps.Marker({
 			  position: well3,
 			  title:"Proposed Monitoring Well"
 			  });
-			wellMarker.setMap(map);
-		var wellMarker = new google.maps.Marker({
+			well3Marker.setMap(map);
+		var swmu1Marker = new google.maps.Marker({
 			  position: swmu1,
 			  title:"Solid Waste Management Unit"
 			  });
-			wellMarker.setMap(map);
-		var wellMarker = new google.maps.Marker({
+			swmu1Marker.setMap(map);
+		var swmu2Marker = new google.maps.Marker({
 			  position: swmu2,
 			  title:"Solid Waste Management Unit"
 			  });
-			wellMarker.setMap(map);
+			swmu2Marker.setMap(map);
+			var well1InfoContent = '<div class="infoBox">' +
+			  '<p><strong>Proposed Monitoring Well 1</strong><br />Well Elevation 6458 ft.<br />Depth to Groundwater 119 ft.</p>' +
+			  '</div>'
+			var well1InfoWindow = new google.maps.InfoWindow({
+			  content: well1InfoContent
+			  });
+			google.maps.event.addListener(well1Marker, 'click', function() {
+			  well1InfoWindow.open(map,well1Marker);
+			  });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
         </script>
