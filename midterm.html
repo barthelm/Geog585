@@ -50,10 +50,12 @@
 	</ol>
 
 	<h2>Question 3</h2>
-	<p><em>Use the cs2cs command line utility to convert the following latitude-longitude coordinates (WGS84) to UTM, Zone 13N, NAD83 coordinates</em></p>
-	<ol>
-		<li>New Mexico State Capitol: X 414970.12892, Y 3949105.12357</li>
-		<li>El Malpais National Monument: X 232227.11975, Y 3864983.21962</li>
+<p><em>Use the cs2cs command line utility to convert the following latitude-longitude coordinates (WGS84) to UTM, Zone 13N, NAD83 coordinates</em></p>
+	
+    <p><u>Command Line</u>: cs2cs +proj=latlong +ellps=WGS84 +datum=WGS84 +to +proj=utm +zone=13 +ellps=GRS80 +datum=NAD83 +units=m</p>
+    <ol>
+		<li>New Mexico State Capitol: 415022.20	/ 3949101.31 0.00</li>
+		<li>El Malpais National Monument: 232283.06	/ 3864976.71 0.00</li>
 	</ol>
 	
 	<h2>Question 4</h2>
