@@ -64,6 +64,33 @@
 		google.maps.event.addListener(well2Marker, 'click', function() {
 		  well2InfoWindow.open(map,well2Marker);
 		  });
+		 var well3InfoContent = '<div class="infoBox">' +
+		  '<p><strong>Proposed Monitoring Well 3</strong><br />Well Elevation 6474 ft.<br />Depth to Groundwater 109 ft.</p>' +
+		  '</div>'
+		var well3InfoWindow = new google.maps.InfoWindow({
+		  content: well3InfoContent
+		  });
+		google.maps.event.addListener(well3Marker, 'click', function() {
+		  well3InfoWindow.open(map,well3Marker);
+		  });
+		var swmu1InfoContent = '<div class="infoBox">' +
+		  '<p><strong>Solid Waste Management Unit 1</strong><br />Site Characterization:<br />Burn facility with potential nitrate contaminants</p>' +
+		  '</div>'
+		var swmu1InfoWindow = new google.maps.InfoWindow({
+		  content: swmu1InfoContent
+		  });
+		google.maps.event.addListener(swmu1Marker, 'click', function() {
+		  swmu1InfoWindow.open(map,swmu1Marker);
+		  });
+		var swmu2InfoContent = '<div class="infoBox">' +
+		  '<p><strong>Solid Waste Management Unit 2</strong><br />Site Characterization:<br />Burn facility with Volatile Organic Compounds</p>' +
+		  '</div>'
+		var swmu2InfoWindow = new google.maps.InfoWindow({
+		  content: swmu2InfoContent
+		  });
+		google.maps.event.addListener(swmu2Marker, 'click', function() {
+		  swmu2InfoWindow.open(map,swmu2Marker);
+		  });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
         </script>
