@@ -8,16 +8,14 @@
 	<title>Geography 485L/585L Milestone 10</title>
 	<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
 	<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
-	<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2&mkt=en-us"></script>
-    	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    	<script type="text/javascript">        
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">        
 	// define global variables
         var lon = -106.528786;
         var lat = 34.981747;
         var zoom = 13;
         var map;
-	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
-	var ve_shaded, ve_aerial, ve_road, ve_hybrid;
+		var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
 
         // =============== Initialization function ===================
         function init(){
@@ -54,31 +52,9 @@
             gsat = new OpenLayers.Layer.Google(
                 "Google Satellite",
                 {type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22}
-            );
+            );            		
 
             map.addLayers([gphy, gmap, ghyb, gsat]);
-            
-            map.addControl(new OpenLayers.Control.LayerSwitcher() );
-		
-
-            // ================= Virtual Earth layers ====================
-             ve_shaded = new OpenLayers.Layer.VirtualEarth(
-                "Shaded",
-                {type: VEMapStyle.Shaded}
-            );
-            ve_aerial = new OpenLayers.Layer.VirtualEarth(
-                "Aerial",
-                {type: VEMapStyle.Aerial}
-            );
-            ve_road = new OpenLayers.Layer.VirtualEarth(
-                "Road",
-                {animationEnabled: false}
-            );
-            ve_hybridd = new OpenLayers.Layer.VirtualEarth(
-                "Hybrid",
-                {type: VEMapStyle.Hybrid}
-            );
-            map.addLayers([ve_shaded, ve_aerial, ve_road, ve_hybrid]);
             
             map.setCenter(
                 new OpenLayers.LonLat(lon, lat).transform(
