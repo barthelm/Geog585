@@ -10,12 +10,16 @@
     <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript">        
-        // define global variables
+        // Bing Maps API key - request your own key from - http://www.bingmapsportal.com/
+        var apiKey = "AgQRwdWCKHZjOU-fQDBXp1sy8t3AJcjhvGeI4FCBMomdQ8wHBHnGsFdhZLD24cUR"
+		// define global variables
         var lon = -106.528786;
         var lat = 34.981747;
         var zoom = 13;
         var map;
-	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers	
+		var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
+		var bingroad, binghybrid, bingaerial;          // Bing Maps Layers
+	
 
         // =============== Initialization function ===================
         function init(){
@@ -32,7 +36,13 @@
                         new OpenLayers.Control.OverviewMap(),
                         new OpenLayers.Control.KeyboardDefaults()
                     ],
-		units: 'm',
+				maxExtent: new OpenLayers.Bounds(
+                -128 * 156543.0339,
+                -128 * 156543.0339,
+                128 * 156543.0339,
+                128 * 156543.0339),
+                maxResolution: 156543.0339,                
+                units: 'm',
                 projection: new OpenLayers.Projection('EPSG:3857'),
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
             } );
@@ -57,7 +67,27 @@
 
             map.addLayers([gphy, gmap, ghyb, gsat]);
 			
-	    map.addControl(new OpenLayers.Control.LayerSwitcher() );
+			
+			// ================= Bing layers ====================
+            bingroad = new OpenLayers.Layer.Bing({
+                name: "Bing Roads",
+                key: apiKey,
+                type: "Road"
+            });
+            binghybrid = new OpenLayers.Layer.Bing({
+                name: "Bing Hybrid",
+                key: apiKey,
+                type: "AerialWithLabels"
+            });
+            bingaerial = new OpenLayers.Layer.Bing({
+                name: "Bing Aerial Imagery",
+                key: apiKey,
+                type: "Aerial"
+            });
+
+            map.addLayers([bingroad, binghybrid, bingaerial]);
+			
+	    	map.addControl(new OpenLayers.Control.LayerSwitcher() );
             
             map.setCenter(
                 new OpenLayers.LonLat(lon, lat).transform(
