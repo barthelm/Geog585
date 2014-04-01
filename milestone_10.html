@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-		<title>Geography 485L/585L Milestone 10</title>
-		<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<title>Geography 485L/585L Milestone 10</title>
+	<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
     <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript">        
@@ -30,7 +30,7 @@
                         new OpenLayers.Control.OverviewMap(),
                         new OpenLayers.Control.KeyboardDefaults()
                     ],
-				units: 'm',
+		units: 'm',
                 projection: new OpenLayers.Projection('EPSG:3857'),
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
             } );
@@ -55,7 +55,7 @@
 
             map.addLayers([gphy, gmap, ghyb, gsat]);
 			
-			map.addControl(new OpenLayers.Control.LayerSwitcher() );
+	    map.addControl(new OpenLayers.Control.LayerSwitcher() );
             
             map.setCenter(
                 new OpenLayers.LonLat(lon, lat).transform(
@@ -66,7 +66,6 @@
         }
         // =============== End of Initialization Function ============
     </script>
-<style type="text/css">#map {width:90%; height:500px;}</style>
   </head>
   <body onLoad="init()">
 	<h4>Michael D. Barthel<br>
@@ -114,7 +113,6 @@
     <h2>Question 5</h2>
     <p>Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above) that is based upon your responses to questions 1-4 above. </p>
     
-    <div id="map" style="padding-bottom:2em;"/>
-<p>&nbsp;</p>
+    <div id="map" style="margin-bottom:2em;padding-bottom:2em;width:90%; height:500px;"/>
 </body>
 </html>
