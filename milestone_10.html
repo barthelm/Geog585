@@ -19,7 +19,7 @@
         var zoom = 13;
         var map;
 	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
-	var ve_shaded;
+	var ve_shaded, ve_aerial, ve_road, ve_hybrid;
 	var bingroad, binghybrid, bingaerial;          // Bing Maps Layers
 	
         // =============== Initialization function ===================
@@ -40,11 +40,6 @@
                 projection: new OpenLayers.Projection("EPSG:3857"),
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
             } );
-            
-            ve_shaded = new OpenLayers.Layer.VirtualEarth(
-                "Shaded",
-                {type: VEMapStyle.Shaded}
-            );
             
             // ================= Google Maps ====================            
             gphy = new OpenLayers.Layer.Google(
@@ -67,7 +62,7 @@
             map.addLayers([gphy, gmap, ghyb, gsat]);
 			
 			
-			// ================= Bing layers ====================
+	  // ================= Bing layers ====================
             bingroad = new OpenLayers.Layer.Bing({
                 name: "Bing Roads",
                 key: apiKey,
@@ -85,6 +80,26 @@
             });
 
             map.addLayers([bingroad, binghybrid, bingaerial]);
+
+            // ================= Virtual Earth layers ====================
+             ve_shaded = new OpenLayers.Layer.VirtualEarth(
+                "Shaded",
+                {type: VEMapStyle.Shaded}
+            );
+            ve_aerial = new OpenLayers.Layer.VirtualEarth(
+                "Aerial",
+                {type: VEMapStyle.Aerial}
+            );
+            ve_road = new OpenLayers.Layer.VirtualEarth(
+                "Road",
+                {animationEnabled: false}
+            );
+            ve_hybridd = new OpenLayers.Layer.VirtualEarth(
+                "Hybrid",
+                {type: VEMapStyle.Hybrid}
+            );
+            map.addLayers([ve_shaded, ve_aerial, ve_road, ve_hybrid]);
+            
             map.setCenter(
                 new OpenLayers.LonLat(lon, lat).transform(
                     new OpenLayers.Projection("EPSG:4326"),
