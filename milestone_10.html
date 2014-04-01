@@ -6,30 +6,71 @@
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<title>Geography 485L/585L Milestone 10</title>
 		<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOZ4kIXBkV-srQsF4NiMTG3UaSFVq7ltQ&sensor=false">
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">        
+        // define global variables
+        var lon = -106.528786;
+        var lat = 34.981747;
+        var zoom = 13;
+        var map;
+		var gphy, gmap, ghyb, gsat;                    // Google Maps Layers	
+
+        // =============== Initialization function ===================
+        function init(){
+            map = new OpenLayers.Map( 'map',{                
+                controls: [
+                        new OpenLayers.Control.Navigation(),
+                        new OpenLayers.Control.PanZoomBar(),
+                        new OpenLayers.Control.LayerSwitcher({'ascending':true}),
+                        new OpenLayers.Control.Permalink(),
+                        new OpenLayers.Control.ScaleLine(),
+                        new OpenLayers.Control.Permalink('permalink'),
+                        new OpenLayers.Control.MousePosition(),
+                        new OpenLayers.Control.OverviewMap(),
+                        new OpenLayers.Control.KeyboardDefaults()
+                    ],
+				units: 'm',
+                projection: new OpenLayers.Projection('EPSG:3857'),
+                displayProjection: new OpenLayers.Projection("EPSG:4326"),
+            } );
+            
+            // ================= Google Maps ====================            
+            gphy = new OpenLayers.Layer.Google(
+                "Google Physical",
+                {type: google.maps.MapTypeId.TERRAIN}
+            );
+            gmap = new OpenLayers.Layer.Google(
+                "Google Streets", // the default
+                {numZoomLevels: 20}
+            );
+            ghyb = new OpenLayers.Layer.Google(
+                "Google Hybrid",
+                {type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
+            );
+            gsat = new OpenLayers.Layer.Google(
+                "Google Satellite",
+                {type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22}
+            );
+
+            map.addLayers([gphy, gmap, ghyb, gsat]);
+			
+			map.addControl(new OpenLayers.Control.LayerSwitcher() );
+            
+            map.setCenter(
+                new OpenLayers.LonLat(lon, lat).transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                ), zoom
+            );                
+        }
+        // =============== End of Initialization Function ============
     </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(34.981747, -106.528786),
-          zoom: 12,
-          mapTypeId: google.maps.MapTypeId.HYBRID,
-          panControl:true,
-          zoomControl:true,
-          mapTypeControl:true,
-          scaleControl:true,
-          overviewMapControl:true,
-          rotateControl:true
-        };
-		
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-</head>
-	<body>
+<style type="text/css">
+        #map {width:90%; height:500px}
+    </style>
+  </head>
+  <body onLoad="init()">
 	<h4>Michael D. Barthel<br>
 	Mar 24-30<br />
 	Geography 485L/585L </h4>
@@ -75,7 +116,7 @@
     <h2>Question 5</h2>
     <p>Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above) that is based upon your responses to questions 1-4 above. </p>
     
-    <div id="map-canvas"/>
+    <div id="map"/>
 
 </body>
 </html>
