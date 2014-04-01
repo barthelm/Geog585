@@ -20,7 +20,6 @@
 	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
 	var bingroad, binghybrid, bingaerial;          // Bing Maps Layers
 	
-
         // =============== Initialization function ===================
         function init(){
             map = new OpenLayers.Map( 'map',{                
@@ -86,15 +85,13 @@
             });
 
             map.addLayers([bingroad, binghybrid, bingaerial]);
-			
-	    	map.addControl(new OpenLayers.Control.LayerSwitcher() );
-            
             map.setCenter(
                 new OpenLayers.LonLat(lon, lat).transform(
                     new OpenLayers.Projection("EPSG:4326"),
                     map.getProjectionObject()
                 ), zoom
-            );                
+            );
+            map.addControl(new OpenLayers.Control.LayerSwitcher() );
         }
         // =============== End of Initialization Function ============
     </script>
