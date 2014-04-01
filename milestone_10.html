@@ -48,7 +48,8 @@
             );
             ghyb = new OpenLayers.Layer.Google(
                 "Google Hybrid",
-                {type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
+                {type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20},
+                {isBaseLayer:true}
             );
             gsat = new OpenLayers.Layer.Google(
                 "Google Satellite",
