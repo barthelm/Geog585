@@ -14,7 +14,7 @@
         var lat = 34.981747;
         var zoom = 13;
         var map;
-		var gphy, gmap, ghyb, gsat;                    // Google Maps Layers	
+	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers	
 
         // =============== Initialization function ===================
         function init(){
@@ -42,11 +42,11 @@
             );
             gmap = new OpenLayers.Layer.Google(
                 "Google Streets", // the default
-                {numZoomLevels: 20}
+                {type: google.maps.MapTypeId.ROADMAP, numZoomLevels: 20}
             );
             ghyb = new OpenLayers.Layer.Google(
                 "Google Hybrid",
-                {type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
+                {numZoomLevels: 20}
             );
             gsat = new OpenLayers.Layer.Google(
                 "Google Satellite",
