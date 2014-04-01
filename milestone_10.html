@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<title>Geography 485L/585L Milestone 10</title>
+		<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOZ4kIXBkV-srQsF4NiMTG3UaSFVq7ltQ&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(35.0053806, -106.4105833),
+          zoom: 14,
+          mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
+		
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+	  
+    </script>
+</head>
+	<body>
+	<h4>Michael D. Barthel<br>
+	Mar 24-30<br />
+	Geography 485L/585L </h4>
+	
+	<ul id="nav">
+	<li><a href="http://barthelm.github.io/Geog585/index.html">Index</a></li>
+  	<li><a href="http://barthelm.github.io/Geog585/milestone_02.html">MS 2</a></li>
+  	<li><a href="http://barthelm.github.io/Geog585/milestone_03.html">MS 3</a></li>
+  	<li><a href="http://barthelm.github.io/Geog585/milestone_04.html">MS 4</a></li>
+	<li><a href="http://barthelm.github.io/Geog585/deepdive_01.html" style="color:yellow;">DD 1</a></li>
+  	<li><a href="http://barthelm.github.io/Geog585/milestone_05.html">MS 5</a></li>
+  	<li><a href="http://barthelm.github.io/Geog585/milestone_06.html">MS 6</a></li>
+  	<li><a href="http://barthelm.github.io/Geog585/deepdive_02.html" style="color:yellow;">DD 2</a></li>
+  	<li><a href="http://barthelm.github.io/Geog585/milestone_07.html">MS 7</a></li>
+  	<li><a href="http://barthelm.github.io/Geog585/midterm.html" style="color:yellow;">Midterm</a></li>
+ 	  <li>MS 10</li>
+ 	  <li><a href="http://barthelm.github.io/Geog585/milestone_11.html">MS 11</a></li>
+ 	  <li><a href="http://barthelm.github.io/Geog585/milestone_12.html">MS 12</a></li>
+ 	  <li><a href="http://barthelm.github.io/Geog585/milestone_13.html">MS 13</a></li>
+ 	  <li><a href="http://barthelm.github.io/Geog585/milestone_14.html">MS 14</a></li>
+ 	</ul>
+	
+	<h1>Lab Assignment / Assignment 10</h1>
+	<h2>Question 1</h2>
+	<p><em>What area do you want to depict in your map? Why? </em><br>
+      <br>
+    Kirtland Air Force Base (KAFB). To represent areas that contain Unexploded Ordanance (UXO).
+</p>
+	<h2>Question 2</h2>
+	<p><em>What is the center point (latitude and longitude) of your area of interest? </em><br>
+      <br>
+    34°58'54.29"N, 106°31'43.63"W
+</p>
+	<h2>Question 3</h2>
+	<p><em>What style of map (roads, satellite, hybrid, terrain) is appropriate for your map? Terrain, Roads, satellite. Why? </em><br>
+	  <br>
+   Satellite for physical reference. Roads for reference and general location. Polygons that represent UXO regions within KAFB.
+</p>
+    <h2>Question 4</h2>
+	<p><em>What is the scale of your map (local, regional, continental, global)? </em><br>
+    The scale of map is local and will translate into a large scale map with a default zoom of 10.</p>
+    
+    <h2>Question 5</h2>
+    <p>Embed a Google Map in your writeup that is based upon your responses to questions 1-4 above. </p>
+    
+    <div id="map-canvas"/>
+
+</body>
+</html>
