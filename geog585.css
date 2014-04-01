@@ -14,8 +14,9 @@ li {padding-bottom:.5em;}
 #nav li{ display:inline;padding:8px;color:#cccccc;}
 #nav a { display:inline-block;color:#ffffff;text-transform:none;}
 #map-canvas { height: 100%;margin-bottom:3em; }
-#map { height: 100%;margin-bottom:3em; }
+#map { width:80%; height: 80%; margin-bottom:1em; }
 .infoBox { color:black;width:200; }
+#footer {margin-top:3em;margin-bottom:3em;font-size:.6em;color:#cccccc;text-transform:uppercase;}
 
 /* Menu CSS */#cssmenu,
 #cssmenu > ul {
