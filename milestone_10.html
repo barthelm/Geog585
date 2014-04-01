@@ -7,18 +7,18 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<title>Geography 485L/585L Milestone 10</title>
 	<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
-    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript">        
+	<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    	<script type="text/javascript">        
         // Bing Maps API key - request your own key from - http://www.bingmapsportal.com/
         var apiKey = "AgQRwdWCKHZjOU-fQDBXp1sy8t3AJcjhvGeI4FCBMomdQ8wHBHnGsFdhZLD24cUR"
-		// define global variables
+	// define global variables
         var lon = -106.528786;
         var lat = 34.981747;
         var zoom = 13;
         var map;
-		var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
-		var bingroad, binghybrid, bingaerial;          // Bing Maps Layers
+	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
+	var bingroad, binghybrid, bingaerial;          // Bing Maps Layers
 	
 
         // =============== Initialization function ===================
@@ -36,14 +36,14 @@
                         new OpenLayers.Control.OverviewMap(),
                         new OpenLayers.Control.KeyboardDefaults()
                     ],
-				maxExtent: new OpenLayers.Bounds(
+		maxExtent: new OpenLayers.Bounds(
                 -128 * 156543.0339,
                 -128 * 156543.0339,
                 128 * 156543.0339,
                 128 * 156543.0339),
                 maxResolution: 156543.0339,                
                 units: 'm',
-                projection: new OpenLayers.Projection('EPSG:3857'),
+                projection: new OpenLayers.Projection("EPSG:3857"),
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
             } );
             
