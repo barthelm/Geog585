@@ -21,7 +21,7 @@
         function init(){
             map = new OpenLayers.Map( 'map',{                
                 controls: [
-                        new OpenLayers.Control.Navigation(),
+                        new OpenLayers.Control.Navigation({zoomWheelEnabled:false}),
                         new OpenLayers.Control.PanZoomBar(),
                         new OpenLayers.Control.LayerSwitcher({'ascending':true}),
                         new OpenLayers.Control.Permalink(),
