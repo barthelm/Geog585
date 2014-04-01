@@ -11,8 +11,6 @@
 	<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2&mkt=en-us"></script>
     	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     	<script type="text/javascript">        
-        // Bing Maps API key - request your own key from - http://www.bingmapsportal.com/
-        var apiKey = "AgQRwdWCKHZjOU-fQDBXp1sy8t3AJcjhvGeI4FCBMomdQ8wHBHnGsFdhZLD24cUR";
 	// define global variables
         var lon = -106.528786;
         var lat = 34.981747;
@@ -20,8 +18,7 @@
         var map;
 	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
 	var ve_shaded, ve_aerial, ve_road, ve_hybrid;
-	var bingroad, binghybrid, bingaerial;          // Bing Maps Layers
-	
+
         // =============== Initialization function ===================
         function init(){
             map = new OpenLayers.Map( 'map',{                
@@ -60,26 +57,9 @@
             );
 
             map.addLayers([gphy, gmap, ghyb, gsat]);
-			
-			
-	  // ================= Bing layers ====================
-            bingroad = new OpenLayers.Layer.Bing({
-                name: "Bing Roads",
-                key: apiKey,
-                type: "Road"
-            });
-            binghybrid = new OpenLayers.Layer.Bing({
-                name: "Bing Hybrid",
-                key: apiKey,
-                type: "AerialWithLabels"
-            });
-            bingaerial = new OpenLayers.Layer.Bing({
-                name: "Bing Aerial Imagery",
-                key: apiKey,
-                type: "Aerial"
-            });
-
-            map.addLayers([bingroad, binghybrid, bingaerial]);
+            
+            map.addControl(new OpenLayers.Control.LayerSwitcher() );
+		
 
             // ================= Virtual Earth layers ====================
              ve_shaded = new OpenLayers.Layer.VirtualEarth(
