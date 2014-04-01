@@ -19,6 +19,7 @@
         var zoom = 13;
         var map;
 	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
+	var ve_shaded;
 	var bingroad, binghybrid, bingaerial;          // Bing Maps Layers
 	
         // =============== Initialization function ===================
@@ -46,6 +47,11 @@
                 projection: new OpenLayers.Projection("EPSG:3857"),
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
             } );
+            
+            ve_shaded = new OpenLayers.Layer.VirtualEarth(
+                "Shaded",
+                {type: VEMapStyle.Shaded}
+            );
             
             // ================= Google Maps ====================            
             gphy = new OpenLayers.Layer.Google(
