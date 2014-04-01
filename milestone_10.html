@@ -15,7 +15,7 @@
         var lat = 34.981747;
         var zoom = 13;
         var map;
-		var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
+	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
 
         // =============== Initialization function ===================
         function init(){
@@ -32,6 +32,13 @@
                         new OpenLayers.Control.OverviewMap(),
                         new OpenLayers.Control.KeyboardDefaults()
                     ],
+                maxExtent: new OpenLayers.Bounds(
+                -128 * 156543.0339,
+                -128 * 156543.0339,
+                128 * 156543.0339,
+                128 * 156543.0339),
+                maxResolution: 156543.0339,                
+                units: 'm',
                 projection: new OpenLayers.Projection("EPSG:3857"),
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
             } );
