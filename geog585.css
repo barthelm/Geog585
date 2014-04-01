@@ -9,7 +9,8 @@ h2 {color:green;padding-top:1em;font-size:1.1em}
 p {padding-bottom:1em;}
 li {padding-bottom:.5em;}
 #nav{ font-size:.9em;border:2px solid #ccc;border-width:2px 0;list-style:none; margin:2em 0 0 0;padding:10px;text-align:center;background-color:#555555}
-#nav li{ display:inline;padding:10px;color:#cccccc;}
+#nav li{ display:inline;padding:8px;color:#cccccc;}
 #nav a { display:inline-block;color:#ffffff;text-transform:none;}
 #map-canvas { height: 100%;margin-bottom:3em; }
+#map { height: 90%;margin-bottom:3em; }
  .infoBox { color:black;width:200; }
