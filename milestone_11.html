@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
+<head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -9,14 +9,15 @@
 	<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
 	<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    	<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2&mkt=en-us"></script>
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2&mkt=en-us"></script>
 	<script type="text/javascript">        
 	// define global variables
         var lon = -106.528786;
         var lat = 34.981747;
-        var zoom = 13;
-        var map;
-	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
+        var zoom = 11;
+        var myProjection = new OpenLayers.Projection("EPSG:4326");
+		var map;
+	    var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
 
         // =============== Initialization function ===================
         function init(){
@@ -71,15 +72,38 @@
                 ), zoom
             );
             map.addControl(new OpenLayers.Control.LayerSwitcher() );
+			
+			// ========= WMS Layer from http://rgis.unm.edu ========== //
+    featuresLayer = new OpenLayers.Layer.WMS( 
+        "New Mexico Mountain Ranges", 
+        "http://gstore.unm.edu/apps/rgis/datasets/327bfbb2-5bca-413b-a0dd-e0acce724d36/services/ogc/wms?",
+        {layers: "nmranges", version: '1.1.0', transparent: 'TRUE'},
+        {isBaseLayer: false, visibility: false}
+    );
+    map.addLayer(featuresLayer);
+	airportLayer = new OpenLayers.Layer.WMS( 
+        "Airports", 
+        "http://gstore.unm.edu/apps/rgis/datasets/663a1e80-2bd3-4eca-92e4-6cde574a0627/services/ogc/wms?",
+        {layers: "gnisair", version: '1.1.0', transparent: 'TRUE'},
+        {isBaseLayer: false, visibility: false}
+    );
+    map.addLayer(airportLayer);
+	emergencyLayer = new OpenLayers.Layer.WMS( 
+        "Fire Stations", 
+        "http://gstore.unm.edu/apps/rgis/datasets/309ee935-1b64-4b91-9389-2c3693b6095e/services/ogc/wms?",
+        {layers: "2008_09_19_nm_firestations", version: '1.1.0', transparent: 'TRUE'},
+        {isBaseLayer: false, visibility: false}
+    );
+    map.addLayer(emergencyLayer);
         }
         // =============== End of Initialization Function ============
     </script>
   </head>
   <body onLoad="init()">
-	<h4>Michael D. Barthel<br>
-	Mar 31-Apr 6<br />
-	Geography 485L/585L </h4>
-	
+<h4>Michael D. Barthel<br>
+Mar 31-Apr 6<br />
+Geography 485L/585L </h4>
+
 <div id='cssmenu'>
 <ul>
    <li class='active'><a href='http://barthelm.github.io/Geog585/index.html'><span>Index</span></a></li>
@@ -123,8 +147,10 @@
 </ul>
 </ul>
 </div>
-	<h1>Lab Assignment / Assignment 11</h1>
-	<p>Please create a new OpenLayers mapping page that is based upon the initial map (and thematic focus) that you created for last week's milestone, and add the following to your map:</p>
+
+<h1>Lab Assignment / Milestone 11</h1>
+
+<p>Please create a new OpenLayers mapping page that is based upon the initial map (and thematic focus) that you created for last week's milestone, and add the following to your map:</p>
 <ol>
 <li>Five Vector Features (based upon Point, LineString, or LinearRing Geometries), each assigned its own style.</li>
 <li>One KML Layer, also styled.</li>
