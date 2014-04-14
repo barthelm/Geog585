@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
 <html>
-<head>
+	<head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	<title>Geography 485L/585L Milestone 11</title>
+	<title>Geography 485L/585L Milestone 10</title>
 	<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
 	<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -76,23 +76,16 @@
     </script>
   </head>
   <body onLoad="init()">
-<h4>Michael D. Barthel<br>
-Mar 31-Apr 6<br />
-Geography 485L/585L </h4>
-
+	<h4>Michael D. Barthel<br>
+	Mar 24-30<br />
+	Geography 485L/585L </h4>
+	
 <div id='cssmenu'>
 <ul>
    <li class='active'><a href='http://barthelm.github.io/Geog585/index.html'><span>Index</span></a></li>
-   <li class='has-sub'><a href='#'><span>Course Info</span></a>
-      <ul>
-        <li><a href="http://karlbenedict.com/GEOG485-585/GEOG485-585_syllabus.html"><span>Syllabus</span></a></li>
-        <li><a href="http://karlbenedict.com/GEOG485-585/goalsAndObjectives/goalsAndObjectives.html"><span>Objectives</span></a></li>
-        <li class='last'><a href="http://karlbenedict.com/GEOG485-585/milestones/milestones.html"><span>Milestones</span></a></li>
-      </ul>
-   </li>
    <li class='has-sub'><a href='#'><span>Milestones 2-7</span></a>
       <ul>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_02.html"><span>MS 2</span></a></li>
+<li><a href="http://barthelm.github.io/Geog585/milestone_02.html"><span>MS 2</span></a></li>
         <li><a href="http://barthelm.github.io/Geog585/milestone_03.html"><span>MS 3</span></a></li>
         <li><a href="http://barthelm.github.io/Geog585/milestone_04.html"><span>MS 4</span></a></li>
         <li><a href="http://barthelm.github.io/Geog585/milestone_05.html"><span>MS 5</span></a></li>
@@ -123,15 +116,28 @@ Geography 485L/585L </h4>
 </ul>
 </ul>
 </div>
-
-<h1>Lab Assignment / Milestone 11</h1>
-
-<h2>Please create a new OpenLayers mapping page that is based upon the initial map (and thematic focus) that you created for last week's milestone, and add the following to your map:</h2>
-<ol>
-<li>Five Vector Features (based upon Point, LineString, or LinearRing Geometries), each assigned its own style.</li>
-<li>One KML Layer, also styled.</li>
-<li>One WMS Layer.</li>
-</ol>
+	<h1>Lab Assignment / Assignment 10</h1>
+	<h2>Question 1</h2>
+	<p><em>What area do you want to depict in your map? Why? </em><br>
+      <br>
+    Kirtland Air Force Base (KAFB). To represent areas that contain Unexploded Ordanance (UXO).
+</p>
+	<h2>Question 2</h2>
+	<p><em>What is the center point (latitude and longitude) of your area of interest? </em><br>
+      <br>
+    34°58'54.29"N, 106°31'43.63"W
+</p>
+	<h2>Question 3</h2>
+	<p><em>What style of map (roads, satellite, hybrid, terrain) is appropriate for your map? Terrain, Roads, satellite. Why? </em><br>
+	  <br>
+   Satellite for physical reference. Roads for reference and general location. Polygons that represent UXO regions within KAFB.
+</p>
+    <h2>Question 4</h2>
+	<p><em>What is the scale of your map (local, regional, continental, global)? </em><br><br>
+    The scale of map is local and will translate into a large scale map with a default zoom of 13.</p>
+    
+    <h2>Question 5</h2>
+    <p>Embed the OpenLayers Map in your writeup (included with the answers to questions 1-4 above)<br />that is based upon your responses to questions 1-4 above. </p>
     
     <div id="map"></div>
     
