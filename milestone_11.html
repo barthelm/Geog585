@@ -65,6 +65,64 @@
 
             map.addLayers([gphy, gmap, ghyb, gsat]);
             
+            
+        // =========== KMZ Layer Addition ===============
+	Layers.stations = new OpenLayers.Layer.Vector("Air Monitoring Stations", {
+                projection: map.displayProjection,
+                visibility: false,
+                style: myStationsStyle,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://www.myrsh.net/Air and Meteorological.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: true
+                    })
+                })
+            });
+           	map.addLayer(Layers.stations)	
+           		
+	Layers.towers = new OpenLayers.Layer.Vector("Meteorological Towers", {
+                projection: map.displayProjection,
+                visibility: false,
+                style: myTowersStyle,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://www.myrsh.net/Air and Meteorological.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: true
+                    })
+                })
+            });
+           	map.addLayer(Layers.towers)		
+			            
+	Layers.sampling = new OpenLayers.Layer.Vector("Environmental Sampling Locations", {
+                projection: map.displayProjection,
+                visibility: false,
+                style:  mySamplingStyle,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://www.myrsh.net/Air and Meteorological.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: true
+                    })
+                })
+            });
+           	map.addLayer(Layers.sampling)		
+			            
+	Layers.precip = new OpenLayers.Layer.Vector("New Mexico Annual Average Precipitation (in)", {
+                projection: map.displayProjection,
+                visibility: false,
+                style:  myPrecipStyle,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://www.myrsh.net/Air and Meteorological.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: true
+                    })
+                })
+            });
+           	map.addLayer(Layers.precip)			            
+			
             map.setCenter(
                 new OpenLayers.LonLat(lon, lat).transform(
                     new OpenLayers.Projection("EPSG:4326"),
