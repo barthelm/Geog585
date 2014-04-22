@@ -63,7 +63,7 @@
                 {type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22}
             );            		
 
-            map.addLayers([gphy, gmap, ghyb, gsat])
+            map.addLayers([gphy, gmap, ghyb, gsat]);
             
             
         // =========== KMZ Layer Addition ===============
@@ -79,7 +79,7 @@
                     })
                 })
             });
-           	map.addLayer(Layers.stations)	
+           	map.addLayer(Layers.stations);	
            		
 	Layers.towers = new OpenLayers.Layer.Vector("Meteorological Towers", {
                 projection: map.displayProjection,
@@ -93,7 +93,7 @@
                     })
                 })
             });
-           	map.addLayer(Layers.towers)		
+           	map.addLayer(Layers.towers);		
 			            
 	Layers.sampling = new OpenLayers.Layer.Vector("Environmental Sampling Locations", {
                 projection: map.displayProjection,
@@ -107,7 +107,7 @@
                     })
                 })
             });
-           	map.addLayer(Layers.sampling)		
+           	map.addLayer(Layers.sampling);		
 			            
 	Layers.precip = new OpenLayers.Layer.Vector("New Mexico Annual Average Precipitation (in)", {
                 projection: map.displayProjection,
@@ -121,7 +121,7 @@
                     })
                 })
             });
-           	map.addLayer(Layers.precip)			            
+           	map.addLayer(Layers.precip);			            
 			
             map.setCenter(
                 new OpenLayers.LonLat(lon, lat).transform(
