@@ -45,22 +45,6 @@
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
             } );
             
-            Layers.stations = new OpenLayers.Layer.Vector("Air Monitoring Stations", {
-                projection: map.displayProjection,
-                visibility: false,
-                style: myStationsStyle,
-                strategies: [new OpenLayers.Strategy.Fixed()],
-                protocol: new OpenLayers.Protocol.HTTP({
-                    url: "http://www.myrsh.net/Air and Meteorological.kml",
-                    format: new OpenLayers.Format.KML({
-                        extractStyles: true,
-                        extractAttributes: true,
-                        maxDepth: 2
-                    })
-                })
-            });
-           	map.addLayer(Layers.stations)
-            
             // ================= Google Maps ====================            
             gphy = new OpenLayers.Layer.Google(
                 "Google Physical",
