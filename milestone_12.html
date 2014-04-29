@@ -10,7 +10,7 @@
 </head>
 <body>
 <h4>Michael D. Barthel<br>
-DATE<br />
+April 7-13, 2014<br />
 Geography 485L/585L </h4>
 
 <div id='cssmenu'>
@@ -58,7 +58,7 @@ Geography 485L/585L </h4>
 </div>
 <h1>Lab Assignment / Milestone 12</h1>
 <h2>Task 1: Add three WMS layers to a new map project in QGIS, with one coming from each of the following collections of WMS services: USGS's National Maps Service Endpoints Page and NRCS Soil Data Mart WMS Service. </h2>
-<p>(I couldn't get NRCS Soil Data WMS to work)</p>
+<p>(I couldn't get NRCS Soil Data WMS to work. The link took me to a file to download to my computer.)</p>
 
 <p><em><strong>Request:</strong></em><br />
   <a href="http://basemap.nationalmap.gov/ArcGIS/services/USGSTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS">http://basemap.nationalmap.gov/ArcGIS/services/USGSTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS </a><br />
@@ -81,6 +81,27 @@ Geography 485L/585L </h4>
   <em><strong>Layer Title: </strong></em>Local Road</p>
 <p><img src="http://www.myrsh.net/geog585/MS12/transport650.jpg" /></p>
 
-<h2>Task 2: Add three WFS layers to the same QGIS project, two based upon data available from the RGIS data browser (http://rgis.unm.edu/browsedata), and one based on the USGS GeoNames WFS service (http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&service=WFS. </h2>
+<h2>Task 2: Add three WFS layers to the same QGIS project, two based upon data available from the RGIS data browser, and one based on the USGS GeoNames WFS service. </h2>
+
+<p><em><strong>Request:</strong></em><br />
+  <a href=" http://gstore.unm.edu/apps/rgis/datasets/aca5b4b1-b439-4856-87cd-53b473154f57/services/ogc/wfs?SERVICE=wfs&REQUEST=GetCapabilities&VERSION=1.0.0"> http://gstore.unm.edu/apps/rgis/datasets/aca5b4b1-b439-4856-87cd-53b473154f57/services/ogc/wfs?SERVICE=wfs&REQUEST=GetCapabilities&VERSION=1.0.0 </a><br />
+  <em><strong>Service:</strong></em> RGIS<br />
+  <em><strong>Layer Name:</strong></em> cit2shp<br />
+  <em><strong>Dataset Title: </strong></em>Metro Boundary of Towns >5000 Population</p>
+<p><img src="http://www.myrsh.net/geog585/MS12/wfs-metro650.jpg" /></p>
+
+<p style="margin-top:2em"><em><strong>Request:</strong></em><br />
+  <a href="http://gstore.unm.edu/apps/rgis/datasets/b6cc9cfe-2069-4474-b7af-551f8b9617ae/services/ogc/wfs?SERVICE=wfs&REQUEST=GetCapabilities&VERSION=1.0.0">http://gstore.unm.edu/apps/rgis/datasets/b6cc9cfe-2069-4474-b7af-551f8b9617ae/services/ogc/wfs?SERVICE=wfs&REQUEST=GetCapabilities&VERSION=1.0.0 </a><br />
+  <em><strong>Service:</strong></em> RGIS<br />
+  <em><strong>Layer Name:</strong></em> traffic_data_2011<br />
+  <em><strong>Dataset Title: </strong></em>NM traffic count data for 2011</p>
+<p><img src="http://www.myrsh.net/geog585/MS12/wfs-traffic650.jpg" /></p>
+  
+  <p style="margin-top:2em"><em><strong>Request:</strong></em><br />
+  <a href="http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&service=WFS">http://services.nationalmap.gov/arcgis/services/WFS/geonames/MapServer/WFSServer?request=GetCapabilities&service=WFS </a><br />
+  <em><strong>Service:</strong></em> USGS GeoNames WFS service<br />
+  <em><strong>Layer Name:</strong></em> WFS_geonames:Transportation<br />
+<p><img src="http://www.myrsh.net/geog585/MS12/wfs-transport650.jpg" /></p>
+
 </body>
 </html>
