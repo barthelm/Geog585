@@ -2,88 +2,76 @@
 
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	<title>Geography 485L/585L Deep Dive 3</title>
-	<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>Geography 485L/585L Milestone 11</title>
+<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
+<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2&mkt=en-us"></script>
+
   </head>
-  <body>
+  <body onLoad="init()">
 <h4>Michael D. Barthel<br>
-Mar 31-Apr 6<p>
+Mar 31-Apr 6<br />
 Geography 485L/585L </h4>
 
 <div id='cssmenu'>
 <ul>
-   <li class='active'><a href='http://barthelm.github.io/Geog585/index.html'><span>Index</span></a></p>
+   <li class='active'><a href='http://barthelm.github.io/Geog585/index.html'><span>Index</span></a></li>
    <li class='has-sub'><a href='#'><span>Course Info</span></a>
       <ul>
-        <li><a href="http://karlbenedict.com/GEOG485-585/GEOG485-585_syllabus.html"><span>Syllabus</span></a></p>
-        <li><a href="http://karlbenedict.com/GEOG485-585/goalsAndObjectives/goalsAndObjectives.html"><span>Objectives</span></a></p>
-        <li class='last'><a href="http://karlbenedict.com/GEOG485-585/milestones/milestones.html"><span>Milestones</span></a></p>
+        <li><a href="http://karlbenedict.com/GEOG485-585/GEOG485-585_syllabus.html"><span>Syllabus</span></a></li>
+        <li><a href="http://karlbenedict.com/GEOG485-585/goalsAndObjectives/goalsAndObjectives.html"><span>Objectives</span></a></li>
+        <li class='last'><a href="http://karlbenedict.com/GEOG485-585/milestones/milestones.html"><span>Milestones</span></a></li>
       </ul>
-   </p>
+   </li>
    <li class='has-sub'><a href='#'><span>Milestones 2-7</span></a>
       <ul>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_02.html"><span>MS 2</span></a></p>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_03.html"><span>MS 3</span></a></p>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_04.html"><span>MS 4</span></a></p>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_05.html"><span>MS 5</span></a></p>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_06.html"><span>MS 6</span></a></p>
-        <li class='last'><a href="http://barthelm.github.io/Geog585/milestone_07.html"><span>MS 7</span></a></p>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_02.html"><span>MS 2</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_03.html"><span>MS 3</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_04.html"><span>MS 4</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_05.html"><span>MS 5</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_06.html"><span>MS 6</span></a></li>
+        <li class='last'><a href="http://barthelm.github.io/Geog585/milestone_07.html"><span>MS 7</span></a></li>
       </ul>
-   </p>
+   </li>
    <li class='has-sub'><a href='#'><span>Milestones 10-14</span></a>
       <ul>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_10.html"><span>MS 10</span></a></p>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_11.html"><span>MS 11</span></a></p>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_12.html"><span>MS 12</span></a></p>
-        <li><a href="http://barthelm.github.io/Geog585/milestone_13.html"><span>MS 13</span></a></p>
-        <li class='last'><a href="http://barthelm.github.io/Geog585/milestone_14.html">MS 14</a></p>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_10.html"><span>MS 10</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_11.html"><span>MS 11</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_12.html"><span>MS 12</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_13.html"><span>MS 13</span></a></li>
+        <li class='last'><a href="http://barthelm.github.io/Geog585/milestone_14.html">MS 14</a></li>
       </ul>
-   </p>
+   </li>
    <li class='has-sub'><a href='#'><span>Deep Dives</span></a>
       <ul>
-         <li><a href="http://barthelm.github.io/Geog585/deepdive_01.html"><span>Deep Dive 1</span></a></p>
-         <li><a href="http://barthelm.github.io/Geog585/deepdive_02.html"><span>Deep Dive 2</span></a></p>
-         <li><a href="http://barthelm.github.io/Geog585/deepdive_03.html"><span>Deep Dive 3</span></a></p>
-         <li class='last'><a href="http://barthelm.github.io/Geog585/deepdive_04.html"><span>Deep Dive 4</span></a></p>
+         <li><a href="http://barthelm.github.io/Geog585/deepdive_01.html"><span>Deep Dive 1</span></a></li>
+         <li><a href="http://barthelm.github.io/Geog585/deepdive_02.html"><span>Deep Dive 2</span></a></li>
+         <li><a href="http://barthelm.github.io/Geog585/deepdive_03.html"><span>Deep Dive 3</span></a></li>
+         <li class='last'><a href="http://barthelm.github.io/Geog585/deepdive_04.html"><span>Deep Dive 4</span></a></li>
       </ul>
-   </p>
+   </li>
    <li class='has-sub'><a href='#'><span>EXAMS</span></a>
 <ul>
-<li class='last'><a href="http://barthelm.github.io/Geog585/midterm.html"><span>Midterm</span></a></p>
+<li class='last'><a href="http://barthelm.github.io/Geog585/midterm.html"><span>Midterm</span></a></li>
 </ul>
 </ul>
 </div>
 
-<h1>Lab Assignment / Deep Dive 3</h1>
+<h1>Lab Assignment / Milestone 11</h1>
 
-<p>Before beginning to work on any mapping problem (online or otherwise), some basic questions need to asked and answered. Please consider and answer (in 2-4 sentences as appropriate for the question) the following questions relating to the problem that you will be working on for the forthcoming assignments:</p>
-
-<h2>What is the high-level description of the problem/question you want to help answer through the presentation of a collection of geographic data over the internet? Please answer in a short paragraph.</h2>
-<p>With the current droubt donditions in New Mexico i thought i would provide data from the internet (NM Watch) and othe sources to show anyc current trends that link local weather conditions and the meteoroligcal stations (kml).  The data will from the NM Watch shows active and inactive fires,  prescribed burns and non-prescribed burns.</p>
-
-<h2>Who is the target audience for the information you want to provide?</h2>
-<p>Target Audience will be local emergency reponse, forest management, and the local community.</p>
-
-<h2>What geographic region does your problem area represent? Please describe it in words (e.g. New Mexico, Alberta Canada, etc.) and define it in terms of a geographic (WGS84) (latitude and longitude) bounding box.</h2>
-<p>The region shown will be Middle Rio Grande, New Mexico/Statewide.</p>
-
-<h2>What types of data do you want to include in your project? Include a description (data content: e.g. elevation data, hydrographic survey, etc.) and types (i.e. raster, vector).</h2>
-<p>Datasets used will be vector data of (statewide meteorological, county lines national forests and waterbodys along with fire status data (wms layer).</p>
-
-<h2>What projection will you use for the presentation of your project data? Again, describe it, provide your reasoning for selection, and provide the corresponding EPSG code.</h2>
-<p>RGIS personal generated polygons , and USGS.</p>
-
-<h2>Where do you anticipate acquiring data for the project from?</h2>
-<p>I anticipate the coordinate system and datums with RGIS, KML's and W.M.S may not be compatible.</p>
-
-<h2>What barriers to acquiring and processing the needed data do you anticipate?</h2>
-<p>Data set :  Name, type of data, format, coordinate reference sytem, spatil extent --GeoMac ArcServer </p>
+<p>Please create a new OpenLayers mapping page that is based upon the initial map (and thematic focus) that you created for last week's milestone, and add the following to your map:</p>
+<ol>
+<li>Five Vector Features (based upon Point, LineString, or LinearRing Geometries), each assigned its own style.</li>
+<li>One KML Layer, also styled.</li>
+<li>One WMS Layer.</li>
+</ol>
     
-    
-<div id="footer">Michael D. Barthel | Geography 485L/585L | Spring 2014</div>
+
+   <div id="footer">Michael D. Barthel | Geography 485L/585L | Spring 2014</div>
 
 </body>
 </html>
