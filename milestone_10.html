@@ -17,13 +17,7 @@
         var zoom = 13;
         var map;
 	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
-	var MarkerData = [34.565713, -106.322807, "KAFB Unexploded Ordinance"];
-	var PathData = [
-	[34.565044, -106.323711], 
-	[34.565044, -106.323708],
-	[34.565044, -106.321409],
-	[34.565044, -106.321484]
-	];
+	
 
         // =============== Initialization function ===================
         function init(){
@@ -77,17 +71,6 @@
                     map.getProjectionObject()
                 ), zoom
             );
-            
-             var path = [];
-	  var bounds = new google.maps.LatLngBounds();
-	  bounds.extend(center);
-	  for (var i in PathData)
-	  {
-		  var p = PathData[i];
-		  var latlng = new google.maps.LatLng(p[0], p[1]);
-		  path.push(latlng);
-		  bounds.extend(latlng);
-	  };
 	  
             map.addControl(new OpenLayers.Control.LayerSwitcher() );
         }
