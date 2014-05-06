@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<title>Geography 485L/585L Milestone 11</title>
+	<link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
+	<script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6.2&mkt=en-us"></script>
+	<script type="text/javascript">        
+	// define global variables
+        var lon = -106.528786;
+        var lat = 34.981747;
+        var zoom = 11;
+        var myProjection = new OpenLayers.Projection("EPSG:4326");
+     	var map;
+
+        // =============== Initialization function ===================
+        function init(){
+            map = new OpenLayers.Map( 'map',{                
+                controls: [
+                        new OpenLayers.Control.Navigation({zoomWheelEnabled:false}),
+                        new OpenLayers.Control.NavToolbar(),
+                        new OpenLayers.Control.PanZoomBar(),
+                        new OpenLayers.Control.LayerSwitcher({'ascending':false}),
+                        new OpenLayers.Control.Permalink(),
+                        new OpenLayers.Control.ScaleLine(),
+                        new OpenLayers.Control.Permalink('permalink'),
+                        new OpenLayers.Control.MousePosition(),
+                        new OpenLayers.Control.OverviewMap(),
+                        new OpenLayers.Control.KeyboardDefaults()
+                    ],
+                maxExtent: new OpenLayers.Bounds(
+                -128 * 156543.0339,
+                -128 * 156543.0339,
+                128 * 156543.0339,
+                128 * 156543.0339),
+                maxResolution: 156543.0339,                
+                units: 'm',
+                projection: new OpenLayers.Projection("EPSG:4326"),
+                displayProjection: new OpenLayers.Projection("EPSG:4326"),
+            } );
+            
+            // from http://basemap.nationalmap.gov/ArcGIS/services/USGSImageryTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS
+Layers.usImagery = new OpenLayers.Layer.WMS( 
+     "US Imagery Tile Service - USGS", 
+      "http://basemap.nationalmap.gov/arcgis/services/USGSImageryTopo/MapServer/WmsServer?",
+      {layers: "0", version: '1.3.0', transparent: 'TRUE'},
+      {isBaseLayer: true}
+);
+
+            map.addLayers(Layers.usImagery);
+
+        // =========== KMZ Layer Addition ===============
+	
+    Layers.AirMonitoringStations = new OpenLayers.Layer.Vector("KML - Air Monitoring Stations", {
+                projection: map.displayProjection,
+                visibility: true,
+                style: AMS_style,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://www.myrsh.net/Air and Meteorological.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: false
+                    })
+                })
+            });
+           	map.addLayer(Layers.AirMonitoringStations)
+
+            map.setCenter(
+                new OpenLayers.LonLat(lon, lat).transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    map.getProjectionObject()
+                ), zoom
+            );
+            map.addControl(new OpenLayers.Control.LayerSwitcher() );
+			
+			// ========= WMS Layer from http://rgis.unm.edu ========== //
+    featuresLayer = new OpenLayers.Layer.WMS( 
+        "New Mexico Mountain Ranges", 
+        "http://gstore.unm.edu/apps/rgis/datasets/327bfbb2-5bca-413b-a0dd-e0acce724d36/services/ogc/wms?",
+        {layers: "nmranges", version: '1.1.0', transparent: 'TRUE'},
+        {isBaseLayer: false, visibility: false}
+    );
+    map.addLayer(featuresLayer);
+	airportLayer = new OpenLayers.Layer.WMS( 
+        "Airports", 
+        "http://gstore.unm.edu/apps/rgis/datasets/663a1e80-2bd3-4eca-92e4-6cde574a0627/services/ogc/wms?",
+        {layers: "gnisair", version: '1.1.0', transparent: 'TRUE'},
+        {isBaseLayer: false, visibility: false}
+    );
+    map.addLayer(airportLayer);
+	emergencyLayer = new OpenLayers.Layer.WMS( 
+        "Fire Stations", 
+        "http://gstore.unm.edu/apps/rgis/datasets/309ee935-1b64-4b91-9389-2c3693b6095e/services/ogc/wms?",
+        {layers: "2008_09_19_nm_firestations", version: '1.1.0', transparent: 'TRUE'},
+        {isBaseLayer: false, visibility: false}
+    );
+    map.addLayer(emergencyLayer);
+        }
+        // =============== End of Initialization Function ============
+    </script>
+  </head>
+  <body onLoad="init()">
+<h4>Michael D. Barthel<br>
+Mar 31-Apr 6<br />
+Geography 485L/585L </h4>
+
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='http://barthelm.github.io/Geog585/index.html'><span>Index</span></a></li>
+   <li class='has-sub'><a href='#'><span>Course Info</span></a>
+      <ul>
+        <li><a href="http://karlbenedict.com/GEOG485-585/GEOG485-585_syllabus.html"><span>Syllabus</span></a></li>
+        <li><a href="http://karlbenedict.com/GEOG485-585/goalsAndObjectives/goalsAndObjectives.html"><span>Objectives</span></a></li>
+        <li class='last'><a href="http://karlbenedict.com/GEOG485-585/milestones/milestones.html"><span>Milestones</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Milestones 2-7</span></a>
+      <ul>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_02.html"><span>MS 2</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_03.html"><span>MS 3</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_04.html"><span>MS 4</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_05.html"><span>MS 5</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_06.html"><span>MS 6</span></a></li>
+        <li class='last'><a href="http://barthelm.github.io/Geog585/milestone_07.html"><span>MS 7</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Milestones 10-14</span></a>
+      <ul>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_10.html"><span>MS 10</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_11.html"><span>MS 11</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_12.html"><span>MS 12</span></a></li>
+        <li><a href="http://barthelm.github.io/Geog585/milestone_13.html"><span>MS 13</span></a></li>
+        <li class='last'><a href="http://barthelm.github.io/Geog585/milestone_14.html">MS 14</a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Deep Dives</span></a>
+      <ul>
+         <li><a href="http://barthelm.github.io/Geog585/deepdive_01.html"><span>Deep Dive 1</span></a></li>
+         <li><a href="http://barthelm.github.io/Geog585/deepdive_02.html"><span>Deep Dive 2</span></a></li>
+         <li><a href="http://barthelm.github.io/Geog585/deepdive_03.html"><span>Deep Dive 3</span></a></li>
+         <li class='last'><a href="http://barthelm.github.io/Geog585/deepdive_04.html"><span>Deep Dive 4</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>EXAMS</span></a>
+<ul>
+<li class='last'><a href="http://barthelm.github.io/Geog585/midterm.html"><span>Midterm</span></a></li>
+</ul>
+</ul>
+</div>
+
+<h1>Lab Assignment / Milestone 11</h1>
+
+<p>Please create a new OpenLayers mapping page that is based upon the initial map (and thematic focus) that you created for last week's milestone, and add the following to your map:</p>
+<ol>
+<li>Five Vector Features (based upon Point, LineString, or LinearRing Geometries), each assigned its own style.</li>
+<li>One KML Layer, also styled.</li>
+<li>One WMS Layer.</li>
+</ol>
+    
+    <div id="map"></div>
+    
+   <div id="footer">Michael D. Barthel | Geography 485L/585L | Spring 2014</div>
+
+</body>
+</html>
