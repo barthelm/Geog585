@@ -41,7 +41,7 @@
 		Layers.towns = new OpenLayers.Layer.WMS( 
             	"New Mexico Cities and Towns", 
             	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
-            	{layers: "townpt", styles: 'towns-blk', version: '1.1.1', transparent: 'true'},
+            	{layers: "townpt", version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.towns)
