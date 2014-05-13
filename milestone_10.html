@@ -17,7 +17,6 @@
         var zoom = 13;
         var map;
 	var gphy, gmap, ghyb, gsat;                    // Google Maps Layers
-	var well1 = new google.maps.LatLng(35.002217, -106.417608);
 
         // =============== Initialization function ===================
         function init(){
@@ -43,11 +42,7 @@
                 units: 'm',
                 projection: new OpenLayers.Projection("EPSG:3857"),
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
-                var well1Marker = new google.maps.Marker({
-			  position: well1,
-			  title:"Proposed Monitoring Well"
-			  });
-			well1Marker.setMap(map);
+                
             } );
             
             // ================= Google Maps ====================            
@@ -78,7 +73,6 @@
             );
 	  
             map.addControl(new OpenLayers.Control.LayerSwitcher() );
-            google.maps.event.addDomListener(window, 'load', initialize);
         }
         // =============== End of Initialization Function ============
     </script>
