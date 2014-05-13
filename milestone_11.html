@@ -90,8 +90,8 @@
     map.addLayer(airportLayer);
 	emergencyLayer = new OpenLayers.Layer.WMS( 
         "Fire Stations", 
-        "http://gstore.unm.edu/apps/rgis/datasets/309ee935-1b64-4b91-9389-2c3693b6095e/services/ogc/wms?",
-        {layers: "2008_09_19_nm_firestations", version: '1.1.0', transparent: 'TRUE'},
+        "http://gstore.unm.edu/apps/rgis/datasets/309ee935-1b64-4b91-9389-2c3693b6095e/services/ogc/wms",
+        {layers: "g_2008_09_19_nm_firestations", version: '1.1.0', transparent: 'TRUE'},
         {isBaseLayer: false, visibility: false}
     );
     map.addLayer(emergencyLayer);
