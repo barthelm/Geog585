@@ -75,16 +75,8 @@
             map.addControl(new OpenLayers.Control.LayerSwitcher() );
         }
 
-{
-  var myLatlng = new google.maps.LatLng(34.5749, -106.3115);
-  var mapOptions = {
-    zoom: 4,
-    center: myLatlng
-  }
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-  var marker = new google.maps.Marker({
-      position: myLatlng,
+{ var marker = new google.maps.Marker({
+      position: 34.5749, -106.3115,
       map: map,
       title: 'Hello World!'
   });
