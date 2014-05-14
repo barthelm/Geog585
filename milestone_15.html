@@ -29,14 +29,6 @@
             	{isBaseLayer: true}
             );
             map.addLayer(Layers.usImagery)
-			
-		Layers.vegetation = new OpenLayers.Layer.WMS( 
-            	"Vegetation", 
-            	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
-            	{layers: "nmveget", styles: 'nmvege-green', version: '1.1.1', transparent: 'true'},
-            	{isBaseLayer: false, visibility: false}
-            );
-            map.addLayer(Layers.vegetation)
 		
 		Layers.towns = new OpenLayers.Layer.WMS( 
             	"New Mexico Cities and Towns", 
@@ -54,14 +46,6 @@
             );
             map.addLayer(Layers.wilderness)
 			
-	    Layers.precip = new OpenLayers.Layer.WMS( 
-            	"Precipitation", 
-            	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
-            	{layers: "precipnm", styles: 'precip-blue', version: '1.1.1', transparent: 'true'},
-            	{isBaseLayer: false, visibility: false}
-            );
-            map.addLayer(Layers.precip)
-			
 	   Layers.nmcounty = new OpenLayers.Layer.WMS( 
             	"New Mexico County Boundaries", 
             	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
@@ -76,7 +60,23 @@
             	{layers: "ActiveWildfires", version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: true}
             );
-            map.addLayer(Layers.fires);
+            map.addLayer(Layers.fires)
+            
+           Layers.precip = new OpenLayers.Layer.WMS( 
+            	"Precipitation", 
+            	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+            	{layers: "precipnm", styles: 'precip-blue', version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.precip)
+            
+           Layers.vegetation = new OpenLayers.Layer.WMS( 
+            	"Vegetation", 
+            	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+            	{layers: "nmveget", styles: 'nmvege-green', version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.vegetation);
             
 	   map.setCenter(
             new OpenLayers.LonLat(lon, lat), zoom
