@@ -6,9 +6,94 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
 <title>Geography 485L/585L Final Exam</title>
 <link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
-    
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+	<script type="text/javascript">
+        var lon = -106.62726859964829;
+        var lat = 35.03284096294705;
+        var zoom = 12;
+        var map;
+        var Layers = new Object();
+  
+        function init(){
+            map = new OpenLayers.Map('map', {
+             controls: [
+                        new OpenLayers.Control.Navigation({zoomWheelEnabled:false}),
+                        new OpenLayers.Control.NavToolbar(),
+                        new OpenLayers.Control.PanZoomBar(),
+                        new OpenLayers.Control.LayerSwitcher({'ascending':false}),
+                        new OpenLayers.Control.Permalink(),
+                        new OpenLayers.Control.ScaleLine(),
+                        new OpenLayers.Control.Permalink('permalink'),
+                        new OpenLayers.Control.MousePosition(),
+                        new OpenLayers.Control.OverviewMap(),
+                        new OpenLayers.Control.KeyboardDefaults()
+                    ],
+                numZoomLevels: 14,
+				displayProjection: WGS84
+             });
+			 
+			 //set up projections
+		// World Geodetic System 1984 projection
+		var WGS84 = new OpenLayers.Projection("EPSG:4326");   
+		// WGS84 Google Mercator projection
+		var WGS84_google_mercator = new OpenLayers.Projection("EPSG:900913"); 
+			
+		Layers.a5tif = new OpenLayers.Layer.WMS(
+             "A5",
+             "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+             {layers: "35106-A5", version: '1.1.1', transparent: 'true'},
+             {isBaseLayer: true, visibility: true},
+			 {projection: new OpenLayers.Projection('26913')}
+            );
+        map.addLayer(Layers.a5tif)
+		
+		Layers.a6tif = new OpenLayers.Layer.WMS(
+             "A6",
+             "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+             {layers: "35106-A6", version: '1.1.1', transparent: 'true'},
+             {isBaseLayer: false, visibility: true},
+			 {projection: new OpenLayers.Projection('26913')}
+            );
+        map.addLayer(Layers.a6tif)
+		
+		Layers.a5cont = new OpenLayers.Layer.WMS(
+             "A5-CONT",
+             "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+             {layers: "35106-A5_CONT", version: '1.1.1', transparent: 'true'},
+             {isBaseLayer: false, visibility: true},
+			 {projection: new OpenLayers.Projection('4326')}
+            );
+        map.addLayer(Layers.a5cont)
+		
+		Layers.a6cont = new OpenLayers.Layer.WMS(
+             "A6-CONT",
+             "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+             {layers: "35106-A6_CONT", version: '1.1.1', transparent: 'true'},
+             {isBaseLayer: false, visibility: true},
+ 			 {projection: new OpenLayers.Projection('4326')}
+            );
+        map.addLayer(Layers.a6cont)
+		
+		Layers.tgr = new OpenLayers.Layer.WMS(
+             "tgr2006se_bern_lka",
+             "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+             {layers: "tgr2006se_bern_lka", version: '1.1.1', transparent: 'true'},
+             {isBaseLayer: false, visibility: true},
+			 {projection: new OpenLayers.Projection('4326')}
+            );
+        map.addLayer(Layers.tgr);     
+           
+		map.setCenter(
+            new OpenLayers.LonLat(lon, lat), zoom
+            );
+		map.addControl(new OpenLayers.Control.LayerSwitcher() );
+		map.addControl(new OpenLayers.Control.MousePosition() );
+		map.addControl(new OpenLayers.Control.Permalink() );
+		map.addControl(new OpenLayers.Control.PanZoomBar() ); 
+        }
+</script>
 </head>
-<body>
+  <body onLoad="init()">
 <h4>Michael D. Barthel<br>
 May 12-14, 2014<br />
 Geography 485L/585L </h4>
@@ -107,7 +192,9 @@ GEOGCS["GCS_WGS_1984", DATUM["WGS_1984"</p>
 <p><img src="http://www.myrsh.net/geog585/final/qs/tgr2006se_bern_lka.jpg" /></p>
 <p>4. Create a new OpenLayers web mapping client. Include each of the five layers that you created in GeoServer in the layer picker in your mapping
 client. Embed the client in your final exam web page.</p>    
-    <p>5. Create and add styled layers to your OpenLayers client.<br /> 
+    <div id="map" style="width:90%; height:550px;"></div>
+
+    <p style="margin-top:3em;">5. Create and add styled layers to your OpenLayers client.<br /> 
 i. Create two new layers based on two of the stores added in 2) above.<br />
 ii. Create two custom styles, one for each of the two layers and make those the default style for the
 two new layers<br />
