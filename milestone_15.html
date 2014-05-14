@@ -62,16 +62,23 @@
             );
             map.addLayer(Layers.precip)
 			
-			Layers.nmcounty = new OpenLayers.Layer.WMS( 
+	   Layers.nmcounty = new OpenLayers.Layer.WMS( 
             	"New Mexico County Boundaries", 
             	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
             	{layers: "nmcounty", styles: 'nmcounty-nofill', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: true}
             );
             map.addLayer(Layers.nmcounty);
-            
            			
-			map.setCenter(
+	    Layers.fires = new OpenLayers.Layer.WMS( 
+            	"Active Wildfires", 
+            	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+            	{layers: "ActiveWildfires", version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: true}
+            );
+            map.addLayer(Layers.nmcounty);
+            
+	   map.setCenter(
                 new OpenLayers.LonLat(lon, lat), zoom
             );
             map.addControl(new OpenLayers.Control.LayerSwitcher() );
