@@ -28,8 +28,8 @@
                         new OpenLayers.Control.OverviewMap(),
                         new OpenLayers.Control.KeyboardDefaults()
                     ],
-                numZoomLevels: 14,
-				displayProjection: WGS84
+                numZoomLevels: 25,
+		displayProjection: WGS84
              });
 			 
 			 //set up projections
@@ -43,7 +43,7 @@
              "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
              {layers: "35106-A5", version: '1.1.1', transparent: 'true'},
              {isBaseLayer: true, visibility: true},
-			 {projection: new OpenLayers.Projection('26913')}
+	     {projection: new OpenLayers.Projection('26913')}
             );
         map.addLayer(Layers.a5tif)
 		
@@ -52,7 +52,7 @@
              "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
              {layers: "35106-A6", version: '1.1.1', transparent: 'true'},
              {isBaseLayer: false, visibility: true},
-			 {projection: new OpenLayers.Projection('26913')}
+	    {projection: new OpenLayers.Projection('26913')}
             );
         map.addLayer(Layers.a6tif)
 		
@@ -61,7 +61,7 @@
              "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
              {layers: "35106-A5_CONT", version: '1.1.1', transparent: 'true'},
              {isBaseLayer: false, visibility: true},
-			 {projection: new OpenLayers.Projection('4326')}
+	     {projection: new OpenLayers.Projection('4326')}
             );
         map.addLayer(Layers.a5cont)
 		
@@ -70,7 +70,7 @@
              "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
              {layers: "35106-A6_CONT", version: '1.1.1', transparent: 'true'},
              {isBaseLayer: false, visibility: true},
- 			 {projection: new OpenLayers.Projection('4326')}
+ 	     {projection: new OpenLayers.Projection('4326')}
             );
         map.addLayer(Layers.a6cont)
 		
@@ -79,11 +79,11 @@
              "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
              {layers: "tgr2006se_bern_lka", version: '1.1.1', transparent: 'true'},
              {isBaseLayer: false, visibility: true},
-			 {projection: new OpenLayers.Projection('4326')}
+	    {projection: new OpenLayers.Projection('4326')}
             );
         map.addLayer(Layers.tgr);     
            
-		map.setCenter(
+	map.setCenter(
             new OpenLayers.LonLat(lon, lat), zoom
             );
 		map.addControl(new OpenLayers.Control.LayerSwitcher() );
