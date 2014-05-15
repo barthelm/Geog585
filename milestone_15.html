@@ -55,7 +55,7 @@
 		Layers.wilderness = new OpenLayers.Layer.WMS( 
             	"Wilderness Boundaries", 
             	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
-            	{layers: "wilderbnd", version: '1.1.1', transparent: 'true'},
+            	{layers: "wilderbnd", styles: 'wilderness', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: true}
             );
             map.addLayer(Layers.wilderness)
