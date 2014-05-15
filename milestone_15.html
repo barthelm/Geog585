@@ -71,7 +71,7 @@
 	    Layers.fires = new OpenLayers.Layer.WMS( 
             	"Active Wildfires", 
             	"http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
-            	{layers: "ActiveWildfires", version: '1.1.1', transparent: 'true'},
+            	{layers: "ActiveWildfires", styles: 'fires', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: true}
             );
             map.addLayer(Layers.fires)
