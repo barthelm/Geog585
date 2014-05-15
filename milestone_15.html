@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="http://barthelm.github.io/Geog585/geog585.css">
     <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
     <script type="text/javascript">
-      
         var lon = -106.36;
         var lat = 34.27;
         var zoom = 7;
@@ -18,9 +17,19 @@
       
         function init(){
              
-            map = new OpenLayers.Map('map',
-            	{
-            		numZoomLevels: 10 
+            map = new OpenLayers.Map('map', {
+                    controls: [
+                        new OpenLayers.Control.Navigation(),
+                        new OpenLayers.Control.PanZoomBar(),
+                        new OpenLayers.Control.LayerSwitcher({'ascending':false}),
+                        new OpenLayers.Control.Permalink(),
+                        new OpenLayers.Control.ScaleLine(),
+                        new OpenLayers.Control.Permalink('permalink'),
+                        new OpenLayers.Control.MousePosition(),
+                        new OpenLayers.Control.OverviewMap(),
+                        new OpenLayers.Control.KeyboardDefaults()
+                    ],
+                    numZoomLevels: 10 
             	});
 	   Layers.usImagery = new OpenLayers.Layer.WMS( 
             	"OpenLayers WMS",
