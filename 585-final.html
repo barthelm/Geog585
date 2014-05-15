@@ -29,7 +29,7 @@
 	     displayProjection: WGS84
              });
 			 
-			 //set up projections
+	        //set up projections
 		// World Geodetic System 1984 projection
 		var WGS84 = new OpenLayers.Projection("EPSG:4326");   
 		// WGS84 Google Mercator projection
@@ -42,6 +42,14 @@
              {isBaseLayer: true}
             );
             map.addLayer(Layers.usImagery)
+            
+	Layers.nmcounty = new OpenLayers.Layer.WMS(
+             "New Mexico County Boundaries",
+             "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+             {layers: "nmcounty", styles: 'nmcounty-nofill', version: '1.1.1', transparent: 'true'},
+             {isBaseLayer: false, visibility: true}
+            );
+            map.addLayer(Layers.nmcounty);
             
          Layers.a5tif = new OpenLayers.Layer.WMS(
              "A5",
