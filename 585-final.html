@@ -10,7 +10,7 @@
 	<script type="text/javascript">
         var lon = -106.62726859964829;
         var lat = 35.06484096294705;
-        var zoom = 12;
+        var zoom = 11;
         var map;
         var Layers = new Object();
   
@@ -19,11 +19,9 @@
              controls: [
                         new OpenLayers.Control.Navigation({zoomWheelEnabled:false}),
                         new OpenLayers.Control.NavToolbar(),
-                        new OpenLayers.Control.PanZoomBar(),
                         new OpenLayers.Control.LayerSwitcher({'ascending':false}),
                         new OpenLayers.Control.ScaleLine(),
                         new OpenLayers.Control.Permalink('permalink'),
-                        new OpenLayers.Control.MousePosition(),
                     ],
               numZoomLevels: 25,
 	     displayProjection: WGS84
