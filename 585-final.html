@@ -89,8 +89,17 @@
  	     {projection: new OpenLayers.Projection('4326')}
             );
         map.addLayer(Layers.a6cont)
+        
+        Layers.a6contStyled = new OpenLayers.Layer.WMS(
+             "A6-CONT-Styled",
+             "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
+             {layers: "35106-A6_CONT", styles: 'a6-fnl', version: '1.1.1', transparent: 'true'},
+             {isBaseLayer: false, visibility: false},
+	     {projection: new OpenLayers.Projection('4326')}
+            );
+        map.addLayer(Layers.a6contStyled)
 		
-		Layers.tgr = new OpenLayers.Layer.WMS(
+	Layers.tgr = new OpenLayers.Layer.WMS(
              "tgr2006se_bern_lka",
              "http://geog485.unm.edu:8080/geoserver/s_barthelm/ows?",
              {layers: "tgr2006se_bern_lka", version: '1.1.1', transparent: 'true'},
